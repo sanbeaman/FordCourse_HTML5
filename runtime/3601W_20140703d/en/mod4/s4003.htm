@@ -1,0 +1,79 @@
+<style>
+#s4003 .slideheader {
+	margin-bottom: 0;
+}
+#s4003 .slidecontent {
+}
+#s4003 .sliderow {
+	width: 100%;
+}
+#s4003 .sliderow {
+	position: relative;
+	width: 100%;
+	height: 450px;
+}
+#s4003 .slideImgBoxCenter{
+	position: relative;
+	width: 900px;
+	height: 392px;
+	margin: 4px auto;
+}
+#s4003 .topTxt{
+	position: relative;
+	width: 900px;
+	height: 25px;
+	margin: 0 auto;
+	font-size: 18pt;
+	font-weight: bold;
+}
+#s4003_img1 {
+	position:  absolute;
+	z-index: 4;
+}
+#s4003_arrow1 {
+	position:  absolute;
+	z-index: 6;
+	top: 208px;
+	left: 13px;
+}
+#s4003_arrow2 {
+	position:  absolute;
+	z-index: 6;
+	top: 195px;
+	left: 660px;
+}
+</style>
+<script type="text/javascript">
+var tl4003;
+$(document).ready(function () {
+	stdPageInit("s4003");
+	var s4003url = $("#s4003").find(".bottomTxt");
+	tl4003 = new TimelineMax({paused:false});
+	tl4003.add(TweenMax.to("#s4003_arrow1", 0, {opacity:0, scale:1.5, left:"-=60px"}));
+	tl4003.add(TweenMax.to("#s4003_arrow2", 0, {opacity:0,scale:1.5, left:"-=60px"}));
+	tl4003.add(TweenMax.to(s4003url, 0, {opacity:0, left:"-=100px"}));
+	tl4003.addPause();
+	tl4003.add(TweenMax.to("#s4003_arrow1", 1, {opacity:1,scale:1, left:"+=60px", ease:"easeOutBack"}),6);
+	tl4003.add(TweenMax.to("#s4003_arrow2", 1, {opacity:1,scale:1, left:"+=60px", ease:"easeOutBack"}),8);
+	tl4003.add(TweenMax.to(s4003url, 1, {opacity:1, left:"+=100px", ease:"easeOutBack"}),12);
+});
+function p4_init() {stdAudioInit('mod4/assets/audio/FordCBS_4003.mp3',tl4003);}
+function p4_out() {tl4003.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s4003" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">Tools and Resources</div>
+		</div>
+		<div class="slidecontent">
+			<div class="sliderow orangevertline">
+				<div class="topTxt">FMCDealer.com > Parts and Service > ESP > Fleet </div>
+				<div class="slideImgBoxCenter">
+					<img id="s4003_img1" class="screenImg" src="mod4/assets/imgs/s4003.png" alt="SCreenShot"/>
+					<img id="s4003_arrow1" class="screenArrow" src="mod4/assets/imgs/s4003_arrow1.png" alt="SCreenImg"/>
+					<img id="s4003_arrow2" class="screenArrow" src="mod4/assets/imgs/s4003_arrow2.png" alt="SCreenImg"/>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

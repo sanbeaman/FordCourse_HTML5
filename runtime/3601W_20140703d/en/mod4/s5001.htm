@@ -1,0 +1,64 @@
+<style>
+#s5001 .slidecontent{
+	position: relative;
+	margin-top:20px;
+	padding-bottom: 20px;
+}
+#s5001 .sliderow {
+	position: relative;
+	width: 100%;
+	padding: 20px 0;
+}
+#s5001 .slidebullets {
+	width: 800px;
+	margin: 10px auto;
+	padding:0;
+}
+#s5001 .arrowbullet_small{
+	margin-left: 40px;
+	background-position: 0 4px;
+	font-size: 18pt;
+	line-height: 18pt;
+}
+</style>
+<script type="text/javascript">
+var tl5001;
+$(document).ready(function () {
+	stdPageInit("s5001");
+	var li5001 = $("#s5001").find("li");
+	tl5001 = new TimelineMax({paused:false});
+	tl5001.add(TweenMax.to(li5001, 0, {opacity:0, left:"+=100px"}));
+	tl5001.addPause();
+	tl5001.add(TweenMax.to("#s5001_b1", 2, {opacity:1, left:"-=100px"}),1);
+	tl5001.add(TweenMax.to("#s5001_b2", 2, {opacity:1, left:"-=100px"}),13);
+	tl5001.add(TweenMax.to("#s5001_b2a", 2, {opacity:1, left:"-=100px"}),21);
+	tl5001.add(TweenMax.to("#s5001_b2b", 2, {opacity:1, left:"-=100px"}),23);
+	tl5001.add(TweenMax.to("#s5001_b2c", 2, {opacity:1, left:"-=100px"}),25);
+	tl5001.add(TweenMax.to("#s5001_b2d", 2, {opacity:1, left:"-=100px"}),28);
+	tl5001.add(TweenMax.to("#s5001_b3", 2, {opacity:1, left:"-=100px"}),32);
+});
+function p7_init() {stdAudioInit('mod4/assets/audio/FordCBS_5001.mp3',tl5001);}
+function p7_out() {tl5001.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s5001" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">Key Learning Points</div>
+		</div>
+		<div class="slidecontent">
+			<div class="sliderow orangeboximg">
+				<div class="slidebullets">
+					<ul class="arrowlist">
+						<li id="s5001_b1" class="arrowbullet">You have an excellent opportunity to retain, recapture, and grow your commercial business</li>
+						<li id="s5001_b2" class="arrowbullet">Ford Commercial Business Solutions is a comprehensive vehicle protection strategy that can be customized to your commercial customers’ individual needs. Its benefits include: </li>
+						<li id="s5001_b2a" class="arrowbullet_small">An integrated service strategy</li>
+						<li id="s5001_b2b" class="arrowbullet_small">Reduced life-cycle costs</li>
+						<li id="s5001_b2c" class="arrowbullet_small">Improved operational efficiencies</li>
+						<li id="s5001_b2d" class="arrowbullet_small">Elimination of service variability </li>
+						<li id="s5001_b3" class="arrowbullet">Use the available tools and resources to develop customized presentations that will increase your commercial business</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

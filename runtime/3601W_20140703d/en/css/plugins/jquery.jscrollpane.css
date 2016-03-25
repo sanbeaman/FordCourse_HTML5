@@ -1,0 +1,61 @@
+/*
+ * CSS Styles that are needed by jScrollPane for it to operate correctly.
+ *
+ * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
+ * may not operate correctly without them.
+ */
+.jspContainer {
+	overflow: hidden;
+	position: relative;
+}
+.jspPane {
+	position: absolute;
+	width: 500px !important;
+}
+.jspVerticalBar {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 32px;
+	height: 100%;
+	background: #a0acb3;
+}
+.jspVerticalBar *, .jspHorizontalBar * {
+	margin: 0;
+	padding: 0;
+}
+.jspCap {
+	display: none;
+}
+.jspTrack {
+	position: relative;
+}
+.jspDrag {
+	background: #b1bec6;
+	position: relative;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+}
+.jspArrow {
+	text-indent: -20000px;
+	display: block;
+	cursor: pointer;
+}
+.jspArrowUp {
+	background: url(../../images/mod1/Transcript_UP_arrow_100.png) no-repeat center center #a0acb3;
+}
+.jspArrowDown {
+	background: url(../../images/mod1/Transcript_DOWN_arrow_100.png) no-repeat center center #a0acb3;
+}
+.jspArrow.jspDisabled {
+	cursor: default;
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+}
+.jspVerticalBar .jspArrow {
+	height: 16px;
+}
+.jspVerticalBar .jspArrow:focus {
+	outline: none;
+}

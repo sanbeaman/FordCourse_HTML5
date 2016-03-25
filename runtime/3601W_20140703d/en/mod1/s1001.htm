@@ -1,0 +1,234 @@
+<style>
+#s1001 .slidecontent {
+	display: inline-block;
+}
+#s1001 .colLeft {
+	display: inline-block;
+	background: url("mod1/assets/imgs/s1001_graph.png") no-repeat;
+	width: 440px;
+	height: 465px;
+}
+#s1001 .colRight {
+	display: inline-block;
+	width: 529px;
+	height: 465px;
+}
+#s1001acar1 {
+	position: absolute;
+	top: 110px;
+	left: 0;
+}
+#s1001acar2 {
+	position: absolute;
+	top: 162px;
+	left: 0;
+}
+#s1001innerL p {
+	position: absolute;
+	top: 60px;
+	left: 50px;
+	width: 70%;
+	font-size: 16pt;
+	line-height: 16pt;
+	text-align: left;
+}
+#s1001text {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100px;
+	width: 100%;
+}
+#s1001text p {
+	position: absolute;
+	left: 10%;
+	top: 0;
+	height: 100px;
+	width: 80%;
+	font-size: 18pt;
+	line-height: 18pt;
+	color: #f15d22;
+	text-align: center;
+}
+#s1001_car1 {
+	position: absolute;
+	left: 0;
+	top: 110px;
+	height: 60px;
+}
+#s1001_car2 {
+	position: absolute;
+	left: 0;
+	top: 170px;
+	height: 60px;
+}
+#s1001_car1a {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+#s1001_car1b {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+#s1001_car2a {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+#s1001_car2b {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+#s1001_txt1 {
+	position: absolute;
+	width: 250px;
+	left: 50px;
+	top: 50px;
+}
+#s1001_txtR1 {
+	font-size: 16pt;
+	line-height: 16pt;
+	color: #f15d22;
+	position: absolute;
+	width: 300px;
+	right: 10px;
+	top: 150px;
+}
+#s1001_txtR2 {
+	font-size: 14pt;
+	line-height: 14pt;
+	color: #000000;
+	position: absolute;
+	width: 400px;
+	left: 100px;
+	top: 30px;
+}
+#s1001_txtR3 {
+	font-size: 14pt;
+	line-height: 14pt;
+	color: #000000;
+	position: absolute;
+	width: 400px;
+	right: 10px;
+	top: 240px;
+}
+button#btn1001JW {
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+}
+.s1001_carLine {
+	position: absolute;
+	background-color: #f15d22;
+	width: 20px;
+	height: 4px;
+	left: 0;
+	bottom: 0;
+}
+#s1001_carLine1 {
+	position: absolute;
+	/*top: 228px;*/
+	/*width: 139px;*/
+}
+#s1001_carLine2 {
+	position: absolute;
+	/*top: 297px;*/
+	/*width: 436px;*/
+}
+</style>
+<script type="text/javascript">
+var tl1001;
+$(document).ready(function() {
+	stdPageInit("s1001");
+	var s1001_txt1 = $("#s1001_txt1");
+	var s1001_txtR1 = $("#s1001_txtR1");
+	var s1001_txtR2 = $("#s1001_txtR2");
+	var s1001_txtR3 = $("#s1001_txtR3");
+	var s1001_carLine1 = $("#s1001_carLine1");
+	var s1001_carLine2 = $("#s1001_carLine2");
+	var s1001car_1a = $("#s1001_car1a");
+	var s1001car_1b = $("#s1001_car1b");
+	var s1001car_2a = $("#s1001_car2a");
+	var s1001car_2b = $("#s1001_car2b");
+	tl1001 = new TimelineMax();
+	////tl1001.add(TweenMax.to("#btn1001JW", 0, {opacity: 0}));
+	tl1001.add(TweenMax.to(s1001_txt1, 0, {opacity: 0}));
+	tl1001.add(TweenMax.to(s1001_txtR1, 0, {opacity: 0}));
+	tl1001.add(TweenMax.to(s1001_txtR2, 0, {opacity: 0}));
+	tl1001.add(TweenMax.to(s1001_txtR3, 0, {opacity: 0}));
+	tl1001.add(TweenMax.to(s1001car_1a, 0, {opacity: 0}));
+	tl1001.add(TweenMax.to(s1001_carLine1, 0, {opacity: 0}));
+	tl1001.add(TweenMax.to(s1001car_1b, 0, {opacity: 0}));
+	tl1001.add(TweenMax.to(s1001car_2a, 0, {opacity: 0}));
+	tl1001.add(TweenMax.to(s1001_carLine2, 0, {opacity: 0}));
+	tl1001.add(TweenMax.to(s1001car_2b, 0, {opacity: 0}));
+	tl1001.addPause();
+	tl1001.add(TweenMax.to(s1001_txt1, 1, {opacity: 1}));
+	tl1001.add(TweenMax.to(s1001car_1a, 2, {opacity: 1}));
+	tl1001.add(TweenMax.to(s1001car_2a, 2, {opacity: 1}));
+	tl1001.add(TweenMax.to(s1001_txtR1, 2, {opacity: 1}), 11);
+	tl1001.add(TweenMax.to(s1001_txtR1, .5, {opacity: 0}), 18);
+	var tl_car1 = new TimelineMax();
+	tl_car1.add(TweenMax.to(s1001car_1b, 0.5, {opacity: 1}), 0);
+	tl_car1.add(TweenMax.to(s1001car_1a, 0.5, {opacity: 0}));
+	tl_car1.add(TweenMax.to(s1001_carLine1, 0.5, {opacity: 1}));
+	tl_car1.add(TweenMax.to(s1001_txtR2, 1.5, {opacity: 1}));
+	tl_car1.add(TweenMax.to(s1001car_1b, 2, {left: "+=140px"}), 2);
+	tl_car1.add(TweenMax.to(s1001_carLine1, 2, {width: "+=140px"}), 2);
+	tl1001.add(tl_car1, 18);
+	var tl_car2 = new TimelineMax();
+	tl_car2.add(TweenMax.to(s1001car_2b, 0.5, {opacity: 1}), 0);
+	tl_car2.add(TweenMax.to(s1001car_2a, 0.5, {opacity: 0}));
+	tl_car2.add(TweenMax.to(s1001_carLine2, 0.5, {opacity: 1}));
+	tl_car2.add(TweenMax.to(s1001car_2b, 3, {left: "+=400px"}), 1.5);
+	tl_car2.add(TweenMax.to(s1001_carLine2, 3, {width: "+=400px"}), 1.5);
+	tl_car2.add(TweenMax.to(s1001_txtR3, 1, {opacity: 1}));
+	tl1001.add(tl_car2, 48);
+	////tl1001.add(TweenMax.to("#btn1001JW", 1, { opacity: 1}));
+	tl1001.add(TweenMax.to("#btn1001JW", 1, { opacity: 1}),0);//added
+	$("#btn1001JW").click(function(evt) {
+		AudioPlayer.pauseAudio();
+		tl1001.progress(1).pause();
+		WBTApp.setImpedimentComplete();
+		$.get("mod1/assets/video/fordcbs_videoJW02.html", function(data) {WBTApp.showCPop(data);});
+	});
+});
+function p10_init() {
+	isCurrentPageTracked(10, true, "Please watch the video on this page");
+	stdAudioInit('mod1/assets/audio/FordCBS_1001all.mp3', tl1001);
+}
+function p10_out() {tl1001.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s1001" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">The Commercial Market and Ford</div>
+		</div>
+		<div class="slidecontent">
+			<div class="colLeft">
+				<div id="s1001_txt1"><b>Commercial Vehicle Sales Trend</b><br/>Commercial vehicle sales projected to continue growing</div>
+			</div>
+			<div class="colRight">
+				<div id="s1001_txtR1">One out of every 5 new vehicles sold in U.S. becomes a fleet vehicle!</div>
+				<div id="s1001_txtR2">500,000+ in U.S. fleet sales
+					<br/>Ford vehicles comprise nearly half of all fleets
+					<br/>30% Ford U.S. Sales to fleet</div>
+				<div id="s1001_txtR3">Competitors manage 700,000 Ford VINs</div>
+				<div id="s1001_car1">
+					<img id="s1001_car1a" src="mod1/assets/imgs/s1001_car1a.png"/>
+					<img id="s1001_car1b" src="mod1/assets/imgs/s1001_car1orange.png"/>
+					<div id="s1001_carLine1" class="s1001_carLine"></div>
+				</div>
+				<div id="s1001_car2">
+					<img id="s1001_car2a" src="mod1/assets/imgs/s1001_car2a.png"/>
+					<img id="s1001_car2b" src="mod1/assets/imgs/s1001_car2orange.png"/>
+					<div id="s1001_carLine2" class="s1001_carLine"></div>
+				</div>
+			</div>
+			<button id="btn1001JW" class="btn_video btn_videoJW" type="button">Wiegand’s Wisdom</button>
+		</div>
+	</div>
+</div>

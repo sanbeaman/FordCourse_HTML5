@@ -1,0 +1,64 @@
+<style>
+#s2007 .slidecontent {
+	margin-top: 10px;
+	padding-bottom: 40px;
+}
+#s2007 .slidedirections {
+	padding-left:100px;
+	padding-top:4px;
+	font-size: 20pt;
+	color: #f15d22;
+	font-weight: bold;
+	text-align:left;
+}
+#s2007 .slidecontent_top .imgCenter {
+	position: relative;
+	height: 65px;
+	width: 335px;
+	margin: 0 auto;
+}
+#s2007 .sliderow {
+	margin-top: 10px;
+}
+</style>
+<script type="text/javascript">
+var s2007_bulletlis;
+var tl2007;
+$(document).ready(function() {
+	stdPageInit("s2007");
+	//s2007_bulletlis = $(".arrowbullet");
+	//TweenMax.to(bulletli, 0, {opacity:0});
+	tl2007 = new TimelineMax({paused:false});
+	//tl2007.add(TweenMax.to(s2007_bulletlis, 0, {opacity:0}));
+	tl2007.addPause();
+	tl2007.add(TweenMax.to("#s2007_b1", 0.5, {backgroundPositionX:"+=22"}),22);
+	tl2007.add(TweenMax.to("#s2007_b2", 0.5, {backgroundPositionX:"+=22"}),29);
+	tl2007.add(TweenMax.to("#s2007_b3", 0.5, {backgroundPositionX:"+=22"}),38);
+	tl2007.add(TweenMax.to("#s2007_b4", 0.5, {backgroundPositionX:"+=22"}),53);
+	tl2007.add(TweenMax.to("#s2007_b5", 0.5, {backgroundPositionX:"+=22"}),59);
+	tl2007.add(TweenMax.to("#s2007_b6", 0.5, {backgroundPositionX:"+=22"}),64);
+	tl2007.add(TweenMax.to("#s2007_b7", 0.5, {backgroundPositionX:"+=22"}),70);
+});
+function p9_init() {stdAudioInit('mod2/assets/audio/FordCBS_2007.mp3',tl2007);}
+function p9_out() {tl2007.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s2007" class="slideholder">
+		<div class="slideheader"><div class="slideheadertext">Ford Commercial Business Solutions <br/>Competitive Advantages</div></div>
+		<div class="slidecontent">
+			<div class="sliderow orangeboximg">
+				<div class="slidebullets">
+					<ul class="arrowlist">
+						<li id="s2007_b1" class="checkbullet">Provide comprehensive transportation solutions with one-stop shopping</li>
+						<li id="s2007_b2" class="checkbullet">Are dedicated account managers</li>
+						<li id="s2007_b3" class="checkbullet">Can reduce customers’ life cycle costs</li>
+						<li id="s2007_b4" class="checkbullet">Can improve customers’ operational efficiencies</li>
+						<li id="s2007_b5" class="checkbullet">Have an integrated approach covering sales and service</li>
+						<li id="s2007_b6" class="checkbullet">Can reduce service variability and customers’ expenses</li>
+						<li id="s2007_b7" class="checkbullet">Can compete!</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

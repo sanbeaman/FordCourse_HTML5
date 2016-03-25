@@ -1,0 +1,129 @@
+<style>
+#s5002 .slidecontent{
+	margin-top:0;
+	padding-top: 10px;
+	padding-bottom: 40px;
+}
+#s5002 .sliderow {
+	position: relative;
+	width: 100%;
+	height: 360px;
+	margin-top: 30px;
+	padding: 10px 0;
+}
+#s5002 .slideTxtBoxLeft{
+	position: relative;
+	width: 500px;
+	height: 450px;
+	left: 60px;
+	top:0;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+#s5002 .slideImgBoxRight{
+	position: absolute;
+	width: 450px;
+	height: 450px;
+	right: 10px;
+	top:0;
+}
+#s5002_img1 {
+	position:  absolute;
+	bottom:20px;
+	left: 0;
+	z-index: 4;
+}
+#s5002_img2 {
+	position:  absolute;
+	top:10px;
+	right: 10px;
+	z-index: 5;
+}
+#s5002_img3 {
+	position:  absolute;
+	top:100px;
+	left: 100px;
+	z-index: 6;
+}
+#s5002_img4 {
+	position:  absolute;
+	z-index: 7;
+	left: 60px;
+	top: 177px;
+}
+#s5002_img5 {
+	position:  absolute;
+	left: 0;
+	bottom: 50px;
+	z-index: 8;
+}
+#s5002 .headbullet{
+	color: #ffffff;
+	font-weight: bold;
+}
+#s5002 .bottomTxt{
+	position: relative;
+	bottom:10px;
+	left:0;
+	width: 100%;
+	text-align: center;
+	font-size: 18pt;
+	font-weight: bold;
+	color: #f15d22;
+}
+</style>
+<script type="text/javascript">
+var tl5002;
+$(document).ready(function () {
+	stdPageInit("s5002");
+	var s5002_lis = $("#s5002").find("li");
+	var s5002_img1 = $("#s5002_img1");
+	var s5002_img2 = $("#s5002_img2");
+	TweenMax.set(".slideImgBoxRight", {perspective:500});
+	tl5002 = new TimelineMax({paused:false});
+	tl5002.add(TweenMax.to(s5002_lis, 0, {opacity:0, x:"+=150"}));
+	tl5002.add(TweenMax.to(s5002_img1, 0, {opacity:0,scale:0.5, z:"-=100"}));
+	tl5002.add(TweenMax.to(s5002_img2, 0, {opacity:0,scale:1.5, z:"+=100", top:"+=300px"}));
+	tl5002.addPause();
+	tl5002.add(TweenMax.to("#s5002_img1", 2, {opacity:1,scale:1, z:"+=100", ease:"easeOutBack"}));
+	tl5002.add(TweenMax.to("#s5002_img1", 1, {rotationY:10}));
+	tl5002.add(TweenMax.to("#s5002_img2", 2, {opacity:1,scale:1, z:"-=100", top:"-=300px", ease:"easeOutBack"}));
+	tl5002.add(TweenMax.to("#s5002_img2", 1, {rotationY:-10}));
+	tl5002.add(TweenMax.to("#s5002_b1", 1, {opacity:1, x:"-=150", ease:"easeOutBack"}), 1);
+	tl5002.add(TweenMax.to("#s5002_b2", 1, {opacity:1, x:"-=150", ease:"easeOutBack"}), 5);
+	tl5002.add(TweenMax.to("#s5002_b3", 1, {opacity:1, x:"-=150", ease:"easeOutBack"}), 12);
+	tl5002.add(TweenMax.to("#s5002_b4", 1, {opacity:1, x:"-=150", ease:"easeOutBack"}), 18);
+	tl5002.add(TweenMax.to("#s5002_b5", 1, {opacity:1, x:"-=150", ease:"easeOutBack"}), 24);
+	tl5002.add(TweenMax.to("#s5002_b6", 1, {opacity:1, x:"-=150", ease:"easeOutBack"}), 29);
+	//tl5002.staggerTo(s5002_lis, 1, {opacity:1, x:"-=150", ease:"easeInCubic"}, 1);
+});
+function p8_init() {stdAudioInit('mod4/assets/audio/FordCBS_5002.mp3',tl5002);}
+function p8_out() {tl5002.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s5002" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">Congratulations!</div>
+		</div>
+		<div class="slidecontent">
+			<div class="sliderow orangeboximg">
+				<div class="slideTxtBoxLeft">
+					<div class="slidebullets_small">
+						<ul class="arrowlist_small">
+							<li id="s5002_b1" class="headbullet">Congratulations! You have completed the Growing Your Commercial Business with Ford Commercial Business Solutions web-based training course. You should now be able to:</li>
+							<li id="s5002_b2" class="arrowbullet_small">Explain the opportunity offered by Ford Commercial Business Solutions for increasing dealership commercial business and profitability</li>
+							<li id="s5002_b3" class="arrowbullet_small">Identify commercial customer needs and wants for fleet management services</li>
+							<li id="s5002_b4" class="arrowbullet_small">Demonstrate the benefits and value of Ford Commercial Business Solutions over the competition</li>
+							<li id="s5002_b5" class="arrowbullet_small">Develop customized customer presentations to sell Ford Commercial Business Solutions</li>
+							<li id="s5002_b6" class="arrowbullet_small">Apply a consultative sales process to successfully sell Ford Commercial Business Solutions</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="slideImgBoxRight">
+				<img id="s5002_img1" class="screenImg" src="mod4/assets/imgs/s5002_img1.png" alt="SCreenShot"/>
+				<img id="s5002_img2" class="screenImg" src="mod4/assets/imgs/s5002_img2.png" alt="SCreenShot"/>
+			</div>
+		</div>
+	</div>
+</div>

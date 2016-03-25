@@ -1,0 +1,127 @@
+<style>
+#s2002 .slidecontent {
+	position: relative;
+}
+#s2002 img.stepIcon {
+	position: absolute;
+	width:60px;
+	height:60px;
+	top: 52px;
+	right: 30px;
+}
+#s2002 .sliderow {
+	width: 100%;
+	height: 450px;
+}
+#s2002 .slideImgBoxOverlay {
+	position: absolute;
+	width: 100%;
+	z-index: 60;
+}
+#s2002 .slideImgBoxBottom {
+	position: absolute;
+	width: 100%;
+}
+#s2002 .slideImgBoxOverlay .rowImg {
+	position: relative;
+	width: 740px;
+	margin: 10px auto;
+}
+#s2002 .slideImgBoxBottom .rowImg {
+	position: relative;
+	width: 740px;
+	margin: 10px auto;
+}
+#s2002 .slideImgBoxBottom img.rowImg {
+	float: left;
+	padding: 10px;
+}
+#s2002 .slideImgBoxOverlay img.rowImg {
+	float: left;
+	padding: 10px;
+}
+img#img2002a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 5;
+}
+img#img2002b {
+	position: absolute;
+	top: 180px;
+	left: 200px;
+	z-index: 10;
+}
+#s2002 .calloutTxt {
+	top: 120px;
+	left: 120px;
+	width: 280px;
+	font-size: 14pt;
+	line-height: 14pt;
+}
+</style>
+<script type="text/javascript">
+var imgs2002 = [];
+var tl2002, txt2002a, txt2002b, imgs2002top, imgs2002bottom;
+//$('#theDiv').prepend($('<img>',{id:'theImg',src:'theImg.png'}))
+$(document).ready(function () {
+	stdPageInit("s2002");
+	imgs2002bottom = $(".slideImgBoxBottom").find('img');
+	imgs2002overlay = $(".slideImgBoxTop").find('img');
+	TweenMax.set(imgs2002bottom, {transformPerspective:500,rotationY:"+=270deg"});
+	TweenMax.set(imgs2002overlay, {transformPerspective:500});
+	tl2002 = new TimelineMax();
+	//tl2002.add(TweenMax.to(imgs2002bottom, 0, {opacity:0}));
+	tl2002.add(TweenMax.to("#img2002_01o", 0, {opacity:0}));
+	tl2002.add(TweenMax.to("#img2002_01", 0, {rotationY:"+=90deg"}));
+	tl2002.addPause();
+	var tl2 = new TimelineMax();
+	tl2.add(TweenMax.to("#img2002_02o", 1, {rotationY:90}));
+	//tl2002.add(TweenMax.to("#img2002_02", 0, {opacity:1}));
+	tl2.add(TweenMax.to("#img2002_02", 1, {rotationY:"+=90deg"}));
+	var tl3 = new TimelineMax();
+	tl3.add(TweenMax.to("#img2002_03o", 1, {rotationY:90}));
+	//tl2002.add(TweenMax.to("#img2002_03", 0, {opacity:1}));
+	tl3.add(TweenMax.to("#img2002_03", 1, {rotationY:"+=90deg"}));
+	var tl4 = new TimelineMax();
+	tl4.add(TweenMax.to("#img2002_04o", 1, {rotationY:90}));
+	//tl2002.add(TweenMax.to("#img2002_04", 0, {opacity:1}));
+	tl4.add(TweenMax.to("#img2002_04", 1, {rotationY:"+=90deg"}));
+	tl2002.add(tl2,3);
+	tl2002.add(tl3,8);
+	tl2002.add(tl4,10);
+});
+function p3_init() {stdAudioInit('mod2/assets/audio/FordCBS_2002.mp3',tl2002);}
+function p3_out() {tl2002.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s2002" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">What is Ford Commercial Business Solutions?</div>
+		</div>
+		<div class="slidecontent">
+			<div class="sliderow orangevertline">
+				<div class="slideImgBoxBottom">
+					<div class="rowImg">
+						<img id="img2002_01" src="mod2/assets/imgs/img2002_01.png" alt="img01"/>
+						<img id="img2002_03" src="mod2/assets/imgs/img2002_03.png" alt="img03"/>
+					</div>
+					<div class="rowImg">
+						<img id="img2002_02" src="mod2/assets/imgs/img2002_02.png" alt="img02"/>
+						<img id="img2002_04" src="mod2/assets/imgs/img2002_04.png" alt="img04"/>
+					</div>
+				</div>
+				<div class="slideImgBoxOverlay">
+					<div class="rowImg">
+						<img id="img2002_01o" src="mod2/assets/imgs/img2002_00.png" alt="img01"/>
+						<img id="img2002_03o" src="mod2/assets/imgs/img2002_00.png" alt="img03"/>
+					</div>
+					<div class="rowImg">
+						<img id="img2002_02o" src="mod2/assets/imgs/img2002_00.png" alt="img02"/>
+						<img id="img2002_04o" src="mod2/assets/imgs/img2002_00.png" alt="img04"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

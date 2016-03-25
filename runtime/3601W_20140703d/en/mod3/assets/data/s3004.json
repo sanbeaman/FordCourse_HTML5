@@ -1,0 +1,64 @@
+{
+    "s3004": [
+    {
+        "id": "cli3004a",
+        "class": "btnClickImg",
+        "xpos" : "2",
+        "ypos" : "69",
+        "width": "295",
+        "height": "23",
+        "img": "mod3/assets/imgs/s3004_clickImg01.png",
+        "imgw": "526",
+        "imgh": "40",
+        "audio": "mod3/assets/audio/FordCBS_3004-01.mp3"
+    },
+    {
+        "id": "cli3004b",
+        "class": "btnClickImg",
+        "xpos" : "2",
+        "ypos" : "91",
+        "width": "295",
+        "height": "70",
+        "img": "mod3/assets/imgs/s3004_clickImg02.png",
+         "imgw": "526",
+        "imgh": "125",
+        "audio": "mod3/assets/audio/FordCBS_3004-02.mp3"
+    },
+    {
+        "id": "cli3004c",
+        "class": "btnClickImg",
+        "xpos" : "2",
+        "ypos" : "169",
+        "width": "295",
+        "height": "15",
+        "img": "mod3/assets/imgs/s3004_clickImg03.png",
+         "imgw": "526",
+        "imgh": "28",
+        "audio": "mod3/assets/audio/FordCBS_3004-03.mp3"
+    },
+    {
+        "id": "cli3004d",
+        "class": "btnClickImg",
+        "xpos" : "2",
+        "ypos" : "183",
+        "width": "295",
+        "height": "15",
+        "img": "mod3/assets/imgs/s3004_clickImg04.png",
+         "imgw": "526",
+        "imgh": "120",
+        "audio": "mod3/assets/audio/FordCBS_3004-04.mp3"
+    },
+    {
+        "id": "cli3004e",
+        "class": "btnClickImg",
+        "xpos" : "2",
+        "ypos" : "231",
+        "width": "295",
+        "height": "76",
+        "img": "mod3/assets/imgs/s3004_clickImg05.png",
+         "imgw": "526",
+        "imgh": "132",
+        "audio": "mod3/assets/audio/FordCBS_3004-05.mp3"
+    }
+    ]
+}

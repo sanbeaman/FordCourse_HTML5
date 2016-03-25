@@ -1,0 +1,199 @@
+<style>
+#s3025 .slideheader {
+	margin-bottom: 0;
+}
+#s3025 .slidecontent {
+	position: relative;
+	padding-top: 10px;
+}
+#s3025 img.stepIcon {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	top: 52px;
+	right: 30px;
+}
+#s3025 .sliderow {
+	width: 100%;
+	height: 450px;
+}
+#s3025 .slideTxtBox {
+	position: relative;
+	display: inline-block;
+	width: 500px;
+	height: 450px;
+}
+#s3025 .slideImgBox {
+	position: relative;
+	display: inline-block;
+	width: 500px;
+	height: 450px;
+	vertical-align: top;
+}
+img#img3025a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 5;
+}
+img#img3025b {
+	position: absolute;
+	top: 180px;
+	left: 200px;
+	z-index: 10;
+}
+#s3025 .calloutTxt {
+	top: 120px;
+	left: 120px;
+	width: 280px;
+	font-size: 14pt;
+	line-height: 14pt;
+}
+#s3025 ul.subBullets {
+	padding-left: 10px;
+}
+#s3025 .slidebullets {
+	margin-left: 40px;
+	margin-top: 60px;
+}
+#s3025 .arrowbullet_small {
+	margin-left: 40px;
+	background-position: 0 4px;
+	font-size: 18pt;
+	line-height: 18pt;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function() {
+	stdPageInit("s3025");
+	tl3025 = new TimelineMax({
+		paused: true,
+		repeat: 2,
+		yoyo: false,
+		onComplete: showfinalimg3025
+	});
+	$.getJSON('mod3/assets/data/s3025.json', function(data) {
+		var ibox = $("#s3025").find(".slideImgBox");
+		var imgitem;
+		var subTL;
+		var imgs3025 = new Array();
+		$.each(data["sdata3025"], function(name, value) {
+			//console.log(name + '=' + value);
+			imgitem = $("<img/>", {
+				id: value.id,
+				src: value.imgurl
+			});
+			$(imgitem).css({
+				"position": "absolute",
+				"width": value.width + "px",
+				"height": value.height + "px",
+				"top": value.ypos + "px",
+				"left": value.xpos + "px",
+				"z-index": parseInt(value.zindex + 10)
+			});
+			$(imgitem).appendTo(ibox);
+			TweenMax.to(imgitem, 0, {
+				opacity: 0,
+				scale: 0.5
+			});
+			subTL = new TimelineMax();
+			subTL.add(TweenMax.to(imgitem, 2, {
+				opacity: 1,
+				scale: 1,
+				top: "106px"
+			}));
+			subTL.add(value.id, "+=3");
+			subTL.add(TweenMax.to(imgitem, 2, {
+				opacity: 0,
+				scale: 0.5,
+				top: "-84px",
+				delay: 1
+			}));
+			imgs3025.push(subTL);
+		});
+		buildcollage3025(imgs3025);
+	});
+});
+/*
+			imgitem = $("<img/>", {
+				id: item.id,
+				alt: item.id,
+				"class": item.class,
+				src: item.imgurl
+			});
+			$(imgitem).css({
+				"position": "absolute",
+				"width": item.width + "px",
+				"height": item.height + "px",
+				"top": item.ypos + "px",
+				"left": item.xpos + "px",
+				"z-index": parseInt(item.zindex + 10)
+			});
+			$(imgitem).appendTo(ibox);
+*/
+/*
+			TweenMax.to(imgitem, 0, {
+				opacity: 0,
+				scale: 0.5
+			});
+			subTL = new TimelineMax();
+			subTL.add(TweenMax.to(imgitem, 2, {
+				opacity: 1,
+				scale: 1,
+				top: "106px"
+			}));
+			subTL.add(item.id, "+=3");
+			subTL.add(TweenMax.to(imgitem, 2, {
+				opacity: 0,
+				scale: 0.5,
+				top: "-84px",
+				delay: 1
+			}));
+			imgs3025.push(subTL);
+		});
+		//buildcollage3025(imgs3025);
+	});
+});
+*/
+function showfinalimg3025() {
+	var finalimg = $("#s3025").find("img")[2];
+	TweenMax.to(finalimg, 1, {
+		opacity: 1,
+		scale: 1,
+		top: "106px"
+	});
+}
+function buildcollage3025(imgarray) {
+	tl3025.add(imgarray, "", "sequence", "-=2");
+	var finalimg = $("#s3025").find("img")[2];
+	//tl3025.add(TweenMax.to(finalimg, 1, {opacity:1,scale:1,top:"106px"}));
+	tl3025.totalDuration(30);
+}
+function p19_init() {stdAudioInit('mod3/assets/audio/FordCBS_3025.mp3', tl3025);}
+function p19_out() {tl3025.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s3025" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">Step 3: Present the Proposal</div>
+		</div>
+		<div class="slidecontent">
+			<div class="sliderow orangevertline">
+				<div class="slideTxtBox">
+					<div class="slidebullets">
+						<ul class="arrowlist">
+							<li id="s3025_b1" class="arrowbullet">Present proposal</li>
+							<li id="s3025_b2" class="arrowbullet_small">Reinforce features and benefits</li>
+							<li id="s3025_b3" class="arrowbullet_small">Emphasize cost and time efficiencies</li>
+							<li id="s3025_b4" class="arrowbullet">Overcome objections</li>
+							<li id="s3025_b5" class="arrowbullet">Ask for the sale</li>
+						</ul>
+					</div>
+				</div>
+				<div class="slideImgBox">
+				</div>
+			</div>
+		</div>
+		<img class="stepIcon" src="mod3/assets/imgs/iconStep_03.png" alt="Step 3 Icon"/>
+	</div>
+</div>

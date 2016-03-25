@@ -1,0 +1,146 @@
+<style>
+/*
+#s3021 .slidecontent {
+	position: relative;
+	padding-top: 10px;
+}
+#s3021 img.stepIcon {
+	position: absolute;
+	width:60px;
+	height:60px;
+	top: 52px;
+	right: 30px;
+}
+#s3021 .sliderow {
+	width: 100%;
+	height: 450px;
+}
+#s3021 .slideTxtBox {
+	position: relative;
+	display: inline-block;
+	width: 400px;
+	height: 450px;
+	vertical-align:middle;
+}
+#s3021 .slideImgBox {
+	position: relative;
+	display: inline-block;
+	width: 500px;
+	height: 450px;
+	vertical-align:top;
+}
+*/
+#s3021 .slideheader {
+	margin-bottom: 0;
+}
+#s3021 .sliderow {
+	top:15px;
+	width: 100%;
+	height: 450px;
+}
+#s3021 .txtArea{
+	position: relative;
+	display: inline-block;
+	width: 450px;
+	height: 450px;
+	/*vertical-align:middle;*/
+}
+#s3021 .imgArea{
+	position: relative;
+	display: inline-block;
+	width: 550px;
+	height: 450px;
+	vertical-align:top;
+}
+#s3021 .txtArea .txtBox{
+	position:absolute;
+	width: 380px;
+	height: 450px;
+	left: 80px;
+	top:0;
+	display: table;
+}
+#s3021 .txtArea .txtBox .slideTxt {
+	display: table-cell;
+	vertical-align: middle;
+}
+#s3021 .txtArea .txtBox .slideTxt .calloutTxt{
+	width: 280px;
+	font-size: 14pt;
+	line-height: 14pt;
+}
+#s3021 img.stepIcon {
+	position: absolute;
+	width:60px;
+	height:60px;
+	top: 4px;
+	right: 20px;
+}
+img#img3021a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 5;
+}
+img#img3021b {
+	position: absolute;
+	top: 180px;
+	left: 200px;
+	z-index: 10;
+}
+#txt3021a {
+	position: absolute;
+	width: 280px;
+	font-size: 14pt;
+	line-height: 14pt;
+	left: 100px;
+	top:100px;
+}
+#txt3021b {
+	position: absolute;
+	width: 280px;
+	font-size: 14pt;
+	line-height: 14pt;
+	top: 270px;
+	right: -140px;
+}
+</style>
+<script type="text/javascript">
+var tl3021, txt3021a, txt3021b, img3021a, img3021b;
+$(document).ready(function () {
+	stdPageInit("s3021");
+	txt3021a = '#txt3021a';
+	txt3021b = '#txt3021b';
+	tl3021 = new TimelineMax({paused:false});
+	tl3021.add(TweenMax.to(txt3021a, 0, {opacity:0}),0);
+	tl3021.add(TweenMax.to(txt3021b, 0, {opacity:0}),0);
+	tl3021.add(TweenMax.to("#img3021a", 0, {opacity:0}),0);
+	tl3021.add(TweenMax.to("#img3021b", 0, {opacity:0}),0);
+	tl3021.addPause();
+	tl3021.add(TweenMax.to("#img3021a", 2, {opacity:1}),1);
+	tl3021.add(TweenMax.to("#img3021b", 2, {opacity:1}),2);
+	tl3021.add(TweenMax.to(txt3021a, 2, {opacity:1}),6);
+	tl3021.add(TweenMax.to(txt3021b, 2, {opacity:1}),25);
+});
+function p15_init() {stdAudioInit('mod3/assets/audio/FordCBS_3021.mp3',tl3021);}
+function p15_out() {tl3021.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s3021" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">Step 3: Present the Proposal<br/>Customer Sales Presentation Template</div>
+		</div>
+		<div class="slidecontent">
+			<div class="sliderow orangevertline">
+				<div class="txtArea">
+					<div id="txt3021a" class="calloutTxt">Michelle begins customizing the presentation template by entering dealership information on the appropriate slides</div> <div id="txt3021b"  class="calloutTxt">She also customizes the Dealership Provided Services slide to list additional services her dealership offers commercial customers as part of a Ford Commercial Business Solution.</div>
+				</div>
+				<div class="imgArea">
+					<img id="img3021a" src="mod3/assets/imgs/3021a.png" alt="photo 3021a"/>
+					<img id="img3021b" src="mod3/assets/imgs/3021b.png" alt="photo 3021b"/>
+				</div>
+			</div>
+			<img class="stepIcon" src="mod3/assets/imgs/iconStep_03.png" alt="Step 3 Icon"/>
+		</div>
+	</div>
+</div>

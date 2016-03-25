@@ -1,0 +1,32 @@
+{
+    "sdata3025": [
+        {
+        "id": "img3025_01",
+        "classdiv": "imgFlow",
+        "xpos": "59",
+        "ypos": "300",
+        "width": "333",
+        "height": "254",
+        "zindex": "1",
+        "imgurl": "mod3/assets/imgs/img3025_01.png"
+    }, {
+        "id": "img3025_02",
+        "classdiv": "imgFlow",
+        "xpos": "59",
+        "ypos": "300",
+        "width": "333",
+        "height": "254",
+        "zindex": "2",
+        "imgurl": "mod3/assets/imgs/img3025_02.png"
+    }, {
+        "id": "img3025_03",
+        "classdiv": "imgFlow",
+        "xpos": "59",
+        "ypos": "300",
+        "width": "333",
+        "height": "254",
+        "zindex": "3",
+        "imgurl": "mod3/assets/imgs/img3025_03.png"
+    }
+    ]
+}

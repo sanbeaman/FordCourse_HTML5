@@ -1,0 +1,109 @@
+{
+    "sform3010": [
+    {
+        "id": "dd3010",
+        "etype": "dd",
+         "ops": [
+             {"op": " ", "iscorrect":false},
+              {"op": "Taurus SHO AWD", "iscorrect":false},
+              {"op": "Transit Connect", "iscorrect":false},
+              {"op": "Transit, Gasoline", "iscorrect":true},
+              {"op": "F-250 4x2 Diesel", "iscorrect":false},
+             {"op": "F-250 4x4 Diesel", "iscorrect":false}
+            ],
+        "valueCorrect": "Transit, Gasoline",
+         "txt": "",
+        "audioCorrect": "mod3/assets/audio/FordCBS_3010_CORRECT1.mp3",
+        "audioWrong": "mod3/assets/audio/FordCBS_3010_INCORRECT1.mp3"
+    },
+    {
+        "id": "dd3011",
+         "etype": "dd",
+        "ops": [
+             {"op": " ", "iscorrect":false},
+              {"op": "5/60,000", "iscorrect":false},
+              {"op": "5/75,000", "iscorrect":false},
+              {"op": "5/100,000", "iscorrect":false},
+              {"op": "5/125,000", "iscorrect":true},
+             {"op": "6/36,000", "iscorrect":false}
+            ],
+        "valueCorrect": "5/125,000",
+         "txt": "",
+        "audioCorrect": "mod3/assets/audio/FordCBS_3010_CORRECT1.mp3",
+        "audioWrong": "mod3/assets/audio/FordCBS_3010_INCORRECT1.mp3"
+    },
+    {
+        "id": "dd3012",
+         "etype": "dd",
+       "ops": [
+             {"op": " ", "iscorrect":false},
+              {"op": "PremiumCARE", "iscorrect":true},
+              {"op": "ExtraCARE", "iscorrect":false},
+              {"op": "BaseCARE", "iscorrect":false},
+              {"op": "PowertrainCARE", "iscorrect":false}
+            ],
+        "valueCorrect": "PremiumCARE",
+         "txt": "",
+        "audioCorrect": "mod3/assets/audio/FordCBS_3010_CORRECT1.mp3",
+        "audioWrong": "mod3/assets/audio/FordCBS_3010_INCORRECT1.mp3"
+    },
+    {
+        "id": "dd3013",
+         "etype": "dd",
+       "ops": [
+             {"op": " ", "iscorrect":false},
+              {"op": "Standard $100", "iscorrect":false},
+              {"op": "$0 Deductible", "iscorrect":true},
+              {"op": "$200 Deductible", "iscorrect":false},
+              {"op": "$300 Deductible", "iscorrect":false}
+            ],
+        "valueCorrect": "$0 Deductible",
+         "txt": "",
+        "audioCorrect": "mod3/assets/audio/FordCBS_3010_CORRECT1.mp3",
+        "audioWrong": "mod3/assets/audio/FordCBS_3010_INCORRECT1.mp3"
+    },
+    {
+        "id": "dd3014",
+         "etype": "dd",
+         "ops": [
+             {"op": " ", "iscorrect":false},
+              {"op": "Gas/5,000", "iscorrect":true},
+              {"op": "Gas/7,500", "iscorrect":false},
+              {"op": "Diesel/5,000", "iscorrect":false},
+              {"op": "Diesel/10,0000", "iscorrect":false}
+            ],
+        "valueCorrect": "Gas/5,000",
+         "txt": "",
+        "audioCorrect": "mod3/assets/audio/FordCBS_3010_CORRECT1.mp3",
+        "audioWrong": "mod3/assets/audio/FordCBS_3010_INCORRECT1.mp3"
+    },
+    {
+        "id": "dd3015",
+         "etype": "dd",
+         "ops": [
+             {"op": " ", "iscorrect":false},
+             {"op": "5/60,000", "iscorrect":false},
+              {"op": "5/75,000", "iscorrect":false},
+              {"op": "5/100,000", "iscorrect":false},
+              {"op": "5/125,000", "iscorrect":true},
+             {"op": "6/36,000", "iscorrect":false},
+             {"op": "6/48,000", "iscorrect":false}
+            ],
+        "valueCorrect": "5/125,000",
+         "txt": "",
+        "audioCorrect": "mod3/assets/audio/FordCBS_3010_CORRECT1.mp3",
+        "audioWrong": "mod3/assets/audio/FordCBS_3010_INCORRECT1.mp3"
+    },
+    {
+        "id": "dd3016",
+         "etype": "tfield",
+         "ops": [
+             {"op": "4.7"},
+             {"op": "97.42"},
+              {"op": "5,845.00"}
+            ],
+          "txt": "<br><b>Commercial Cost-Per-Mile Value Builder Quick Quote Tool</b><br>Complete!<br>Click Next to Continue.",
+        "audioCorrect": "mod3/assets/audio/FordCBS_3015_CORRECT.mp3"
+    }
+    ]
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width:device-width, min-width=1024, min-height=644, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0"/>
+
+<title>GROWING YOUR COMMERCIAL BUSINESS WITH FORD COMMERCIAL BUSINESS SOLUTIONS</title>
+
+<link rel="stylesheet" type="text/css" href="fonts/stylesheet.css"/>
+<link rel="stylesheet" type="text/css" href="css/global/global.css"/>
+<link rel="stylesheet" type="text/css" href="css/global/shell.css"/>
+
+<!-- Plugin CSS -->
+<link rel="stylesheet" type="text/css" href="css/plugins/audioplayer.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/plugins/jquery.jscrollpane.css"/>
+
+<!-- MODULE CSS -->
+<link rel="stylesheet" type="text/css" href="css/fordcbs_style.css"/>
+
+<!-- JQUERY library global -->
+<!-- <script src="js/lib/jquery-1.8.3.min.js" type="text/javascript"></script>-->
+<script src="js/lib/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="js/lib/jquery.touchwipe.min.js" type="text/javascript"></script>
+<script src="js/lib/jquery.easing.js" type="text/javascript"></script>
+
+<script src="js/lib/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
+<script src="js/lib/jquery.ui.touch-punch.min.js" type="text/javascript"></script>
+
+<!-- Plugins JS -->
+<script src="js/lib/mediaelement-and-player.custom.min.js" type="text/javascript"></script>
+<script src="js/lib/audiolayer.frmwrk.js" type="text/javascript"></script>
+<script src="js/lib/jquery.jscrollpane.min.js" type="text/javascript"></script>
+
+<!-- Plugins Jquery -->
+<script src="js/paul/jquery.paulund_modal_box.js" type="text/javascript"></script>
+<script src="js/plugins/jquery-selectBox/jquery.selectBox.js" type="text/javascript"></script>
+
+<!-- Plugins JS SHELL -->
+<script src="js/shell/greensock/TweenMax.min.js" type="text/javascript"></script>
+<script src="js/shell/greensock/TimelineMax.min.js" type="text/javascript"></script>
+
+<!-- LMS Communication: global -->
+<script src="js/global/cmiscript.js" type="text/javascript"></script>
+<!-- Application: global -->
+<script src="js/global/wbt.app.js" type="text/javascript"></script>
+<!-- Shell & Module Code -->
+<script src="js/shell/mod.js" type="text/javascript"></script>
+
+<!-- Initialize the module -->
+<script type="text/javascript">mod_init('mod2');</script>
+</head>
+<body onUnload="setValues_in_CMI()">
+<div id="frame">
+	<div id="top-menu-nav">
+		<div id="global-ui-menu-tab" class="ui-active off" title="Menu"> </div>
+		<div id="global-ui-help" class="ui-active off" title="Help"> </div>
+		<div id="global-ui-resources" class="ui-active off" title="Resources"> </div>
+		<div id="global-ui-audio" class="ui-active off" title="Audio"> </div>
+		<div id="global-ui-text" class="ui-active off" title="Transcript"> </div>
+		<!-- <div id="global-ui-cc" class="ui-active off" title="Close Captioning"> </div> -->
+		<div id="global-ui-close" class="ui-active off" style="float:right" title="Close"> </div>
+		<div id="pagecount"></div>
+		<div id="progress"> <span style="width: 1%"></span> </div>
+	</div>
+	<div id="header">
+		<div id="course-title"><strong>GROWING YOUR COMMERCIAL BUSINESS WITH <br/>FORD COMMERCIAL BUSINESS SOLUTIONS</strong> </div>
+		<div id="topic-title"> </div>
+		<div id="page-title"> </div>
+	</div>
+	<div id="wrapper">
+		<div id="content"></div>
+	</div>
+</div>
+<div id="screen"></div>
+<div id="slidestartContainer">&nbsp;</div>
+<div id="loading"><img src="images/global/loading.gif" width="32" height="32"/><br/>LOADING THE COURSE</div>
+<div id="global-bookmark-alert" class="alert-popup-container hidden">
+	<div class="global-alert-header">
+		<div class="global-alert-header-top">
+			<div class="header-content-left">ATTENTION</div>
+		</div>
+		<div class="popup-content-wrapper">
+			<div class="alert-popup-content">
+				<div class="alert-popup-content-inner">
+				Click "OK" if you want to return to your last bookmark, or "Cancel" to start from the first page of the course
+				</div>
+				<div class="button box-shadow" id="bookmark-alert-btn-ok">
+					<div class="button-inner">OK</div>
+				</div>
+				<div class="button box-shadow" id="bookmark-alert-btn-cancel">
+					<div class="button-inner">CANCEL</div>
+				</div>
+			</div>
+		</div>
+		<div id="alert-popup-footer" class="alert-popup-footer"></div>
+	</div>
+</div>
+<div id="global-alert-popup" class="alert-popup-container hidden">
+	<div class="global-alert-header">
+		<div class="global-alert-header-top">
+			<div class="header-content-left">ATTENTION</div>
+		</div>
+		<div class="popup-content-wrapper">
+			<div class="alert-popup-content">
+				<div class="alert-popup-content-inner" id="global-alert-content"></div>
+				<div class="button box-shadow global-popup-close">
+					<div class="button-inner">OK</div>
+				</div>
+			</div>
+		</div>
+		<div id="alert-popup-footer" class="alert-popup-footer"></div>
+	</div>
+</div>
+<div id="global-content-popup" class="content-popup-container hidden">
+	<div class="global-content-header">
+		<div class="global-content-header-top">
+			<div class="header-content-left"></div>
+			<div class="header-content-right">
+				<div class="button global-cpopup-close"></div>
+			</div>
+		</div>
+		<div class="popup-content-wrapper">
+			<div class="content-popup-content">
+				<div class="content-popup-content-inner" id="global-content-content"></div>
+			</div>
+		</div>
+		<div id="content-popup-footer" class="content-popup-footer"></div>
+	</div>
+</div>
+<div id="menunav" class="menu-slideout">
+	<div class="menu-nav-tip">&nbsp;</div>
+	<div class="panel-header">TOPIC MENU</div>
+	<!-- menu inner -->
+	<div class="global-top-menu-content">
+		<div id="global-ui-menu-nav-up" class="global-ui-menu-nav hidden">
+			<div id="global-ui-menu-nav-up-icon"></div>
+		</div>
+		<ul class="global-top-menu-content-scroll">
+		</ul>
+		<div id="global-ui-menu-nav-down" class="global-ui-menu-nav hidden">
+			<div id="global-ui-menu-nav-down-icon"></div>
+		</div>
+	</div>
+</div>
+<div id="help-panel" class="menu-slideout">
+	<div class="menu-nav-tip">&nbsp;</div>
+	<div class="panel-header">HELP</div>
+	<div id="global-help-alert"></div>
+</div>
+<div id="resources-panel" class="menu-slideout">
+	<div class="menu-nav-tip">&nbsp;</div>
+	<div class="panel-header">RESOURCES</div>
+	<div id="global-resources-alert"></div>
+</div>
+<div class="lefttbtn" id="global-ui-left" title="Back"> <a href="javascript:void(0)" class="img">&nbsp;</a> </div>
+<div class="rightbtn" id="global-ui-right" title="Next"> <a href="javascript:void(0)" class="img">&nbsp;</a> </div>
+<div id="video-holder"></div>
+<!-- Global audio component. Audio wrapper is optional. Can be used for positioning, styling as in this example. -->
+<div class="audio-wrapper" id="mod-audio">
+	<audio id="mod-audio-player" type="audio/mp3" src="dummy.mp3" controls="controls"></audio>
+</div>
+<form name="frm_main" method="post" action="">
+	<input name="bookmark" type="hidden" id="bookmark">
+	<input name="status" type="hidden" id="status">
+	<input name="suspenddata" type="hidden" id="suspenddata">
+	<input name="score" type="hidden" id="score">
+</form>
+</body>
+</html>

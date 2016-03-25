@@ -1,0 +1,333 @@
+<style>
+/*
+strong { font-weight: bold; }
+em { font-style: italic; }
+ul { list-style-type: circle; }
+ol { list-style-type: decimal; }
+ol li { list-style-type: decimal; margin-left: 20px; }
+a, a:link, a:visited {color:#ffffff; text-decoration: none;}
+*/
+#s3007 .slideoptions button {
+	position: absolute;
+	right: 500px;
+	bottom: 10px;
+	width: auto;
+	padding: 5px 15px;
+	color: #ffffff;
+	background-color: #f15d22;
+	border: 1px solid #fff;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-decoration: none;
+}
+#s3007 .slideoptions button:disabled {
+	background-color: darkslategray;
+}
+#s3007 .slideoptions button:hover {
+	background-color: darkslategray;
+}
+#s3007 .slideoptions {
+	padding: 8px 35px;
+}
+/* Specific checkbox widget styles */
+.ui-checkbox {
+	font-size: 0.75em;
+	margin: 0.6em;
+}
+#s3007 .slidequestion {
+	margin-left: 35px;
+	margin-right: 35px;
+	padding-top: 10px;
+	padding-bottom: 0;
+	color: #425968;
+	font-size: 14pt;
+	line-height: 14pt;
+	text-align: left;
+}
+#s3007 .slideresult {
+	padding: 2px;
+}
+#s3007 .slideresult p {
+	margin-left: 10px;
+	margin-right: 10px;
+	padding-top: 4px;
+	font-size: 10pt;
+	line-height: 10pt;
+	text-align: left;
+	color: #000000;
+}
+#s3007 .optionsarea {
+	margin: 10px 0 0 0;
+}
+#s3007 .qoption {
+	/*
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	*/
+	margin-top: 4px;
+	margin-left: 20px;
+	width: 600px;
+	height: 12px;
+	display: inline-block;
+}
+#s3007 .qoption label {
+	margin-left: 10px;
+	/*
+	padding-top: 2px;
+	padding-bottom: 2px;
+	*/
+	/*border: 1px solid #000000;*/
+	font-size: 12pt;
+	line-height: 12pt;
+	display: inline-block;
+}
+/*
+.optionInput {
+	display:inline-block;
+	top: 3px;
+	width: 24px;
+	height: 24px;
+}
+*/
+#s3007 .optionIcon {
+	width: 12px;
+	height: 12px;
+	top: 2px;
+	/*border: 1px solid #000000;*/
+	background: url('images/shell/mc_checksprite12.png') no-repeat;
+	/*margin-right: 10px;*/
+	display: inline-block;
+}
+#s3007 .optionCorrect {
+	background-position: 0 -12px;
+}
+#s3007 .optionHeader {
+	font-size: 12pt;
+	font-weight: bold;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	width: 600px;
+	height: 16px;
+}
+.ui-helper-hidden-accessible {
+	display: none;
+}
+#s3007 img.stepIcon {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	top: 52px;
+	right: 30px;
+}
+#s3007 img.rightSideImg {
+	position: absolute;
+	width: 400px;
+	height: 365px;
+	top: 60px;
+	right: 35px;
+}
+</style>
+<script type="text/javascript">
+var q1;
+var ans3007 = [];
+var quizJSON;
+var s3007;
+var s3007_slideOptions;
+var s3007_submitbtnquiz;
+$(document).ready(function() {
+	stdPageInit("s3007");
+	s3007 = $("#s3007");
+	s3007_quizJSON = {
+		// Question 3 - Multiple Choice, Multiple True Answers, Select All
+		"q": "How are you going to address this customer’s wants and needs?",
+		"a": [{
+				"otype": "header",
+				"option": "ESP PremiumCARE $0 Deductible",
+				"id": "o1",
+				"correct": false
+			}, {
+				"otype": "cb",
+				"option": "3 years/60,000 miles",
+				"id": "o2",
+				"correct": false
+			}, {
+				"otype": "cb",
+				"option": "4 years/75,000 miles",
+				"id": "o3",
+				"correct": false
+			}, {
+				"otype": "cb",
+				"option": "5 years/100,000 miles",
+				"id": "o4",
+				"correct": false
+			}, {
+				"otype": "cb",
+				"option": "5 years/125,000 miles",
+				"id": "o5",
+				"correct": true
+			}, {
+				"otype": "header",
+				"option": "ESP Premium Maintenance",
+				"id": "o6",
+				"correct": false
+			}, {
+				"otype": "cb",
+				"option": "3 years/60,000 miles/ 3,000 hours",
+				"id": "o7",
+				"correct": false
+			}, {
+				"otype": "cb",
+				"option": "4 years/75,000 miles/ 3,000 hours",
+				"id": "o8",
+				"correct": false
+			}, {
+				"otype": "cb",
+				"option": "5 years/125,000 miles/5,000 hours",
+				"id": "o9",
+				"correct": true
+			}, {
+				"otype": "cb",
+				"option": "5 years/150,000 miles/6,000 hours",
+				"id": "10",
+				"correct": false
+			}, {
+				"otype": "header",
+				"option": "",
+				"id": "11",
+				"correct": false
+			}, {
+				"otype": "cb",
+				"option": "CommerciaLease",
+				"id": "12",
+				"correct": true
+			}, {
+				"otype": "cb",
+				"option": "Ford Commercial Lines of Credit",
+				"id": "13",
+				"correct": true
+			}, {
+				"otype": "cb",
+				"option": "QFC",
+				"id": "14",
+				"correct": true
+			} // no comma here
+		],
+		"correct": "<p>That’s correct. Since the customer keeps vehicles for 5 years and averages 22-thousand miles a year, the 5 year-125-thousand mile, 5-thousand hour term is the right choice for both ESP plans. Remember, that the ESP plans must complement each other for time, mileage, and hour terms. Also, Premium Maintenance comes with a zero deductible. Another advantage of these plans for your customer is that his tie rod wear concern is covered. In addition, for this customer’s vehicles, you’ll want to provide a CommerciaLease Quick Quote. You could include information on Ford Credit’s Commercial Lines of Credit for replacing the customer’s trucks as they approach trade-in. And, of course, you’ll include QFC at no added cost. Be sure to remind your customers  that vehicle service intervals are determined by both mileage and engine hours.  Next, you will calculate cost-per-mile and cost saving for the ESP plans.</p>",
+		"incorrect": "<p>That is incorrect. Since the customer keeps vehicles for 5 years and averages 22-thousand miles a year, the 5 year-125-thousand mile, 5-thousand hour term is the right choice for both ESP plans. Remember, that the ESP plans must complement each other for time, mileage, and hour terms. Also, Premium Maintenance comes with a zero deductible. Another advantage of these plans for your customer is that his tie rod wear concern is covered. In addition, for your customer’s lease cars, you’ll want to provide a CommerciaLease Quick Quote. You could include information on Ford Credit’s Commercial Lines of Credit for replacing the customer’s trucks as they approach trade-in. And, of course, you’ll include QFC. As an added service, provide reminders of service needs based on engine hours; for example, 200 hours equals 5-thousand miles.Next, you will calculate cost-per-mile and cost saving for the ESP plans.</p>" // no comma here
+	}; // no comma here
+	var ansobjs = s3007_quizJSON.a;
+	var qtxt = s3007_quizJSON.q;
+	$(s3007).find(".slidequestion").append(qtxt);
+	s3007_slideOptions = $(s3007).find(".slideoptions");
+	//code with header
+	$.each(ansobjs, function() {
+		var qdiv, newq, headerdiv;
+		if (this.otype == 'header') {
+			newq = $("<div>").addClass('optionHeader').text(this.option);
+		} else {
+			ans3007.push({id: this.id, correct: this.correct});
+			qdiv = $("<div>");
+			var optionIcon = $("<div>").addClass('optionIcon'),
+				inputel = $("<input>").attr('type', 'checkbox').val(this.id).attr('id', this.id).addClass('optionInput'),
+				labelel = $("<label>").text(this.option).attr('for', this.id);
+			newq = qdiv.append(optionIcon, inputel, labelel).addClass("qoption");
+		}
+		$(s3007_slideOptions).append(newq);
+	});
+	s3007_submitbtnquiz = $("<button/>").addClass('checkAnswerClass').text("SUBMIT").prop("disabled", true);
+	s3007_submitbtnquiz.on('click', function(e) {
+		e.preventDefault();
+		checkAnswer();
+	});
+	$(s3007_slideOptions).append(s3007_submitbtnquiz);
+	$(s3007_slideOptions).find("input").on("change", s3007_activateSubmit);
+});
+function s3007_activateSubmit() {
+	var anyanswers = $(s3007_slideOptions).find('input:checked');
+	if (anyanswers.length > 0) {
+		$(s3007_slideOptions).find("button").prop("disabled", false);
+	} else {
+		$(s3007_slideOptions).find("button").prop("disabled", true);
+	}
+}
+function checkAnswer() {
+	var resulttxt;
+	var answerInputs = $(s3007_slideOptions).find('input:checked');
+	if (answerInputs.length > 0) {
+		// Collect the true answers needed for a correct response
+		var trueAnswers = [];
+		for (var i in ans3007) {
+			if (ans3007.hasOwnProperty(i)) {
+				var answer = ans3007[i];
+				var divid = '#' + answer.id;
+				$(divid).prop('disabled', true);
+				if (answer.correct) {
+					trueAnswers.push(answer.id);
+					$(divid).parent(".qoption").find(".optionIcon").addClass('optionCorrect');
+				}
+			}
+		}
+		$(s3007_slideOptions).find("button").prop("disabled", true);
+		// NOTE: Collecting answer index for comparison aims to ensure that HTML entities
+		// and HTML elements that may be modified by the browser / other scrips match up
+		// Collect the answers submitted
+		var selectedAnswers = [];
+		answerInputs.each(function() {
+			var id = $(this).attr('id');
+			selectedAnswers.push(id);
+		});
+		var correctResponse = s3007_compareAnswers(trueAnswers, selectedAnswers);
+		if (correctResponse) {
+			resulttxt = s3007_quizJSON.correct;
+			AudioPlayer.resetAudio('mod3/assets/audio/FordCBS_3008_CORRECT.mp3');
+		} else {
+			resulttxt = s3007_quizJSON.incorrect;
+			AudioPlayer.resetAudio('mod3/assets/audio/FordCBS_3008_INCORRECT.mp3');
+		}
+		$(s3007).find(".slideresult").html(resulttxt);
+		// when complete, reset impediment to allow page transitions
+		WBTApp.setImpedimentComplete();
+	} else {
+	}
+}
+// Compares selected responses with true answers, returns true if they match exactly
+function s3007_compareAnswers(trueAnswers, selectedAnswers) {
+	// crafty array comparison (http://stackoverflow.com/a/7726509)
+	return ($(trueAnswers).not(selectedAnswers).length === 0 && $(selectedAnswers).not(trueAnswers).length === 0);
+}
+function p8_init() {
+	isCurrentPageTracked(8, true, "Please complete all required activities on this page")
+	stdAudioInit('mod3/assets/audio/FordCBS_3007.mp3');
+}
+function p8_out() {
+	$(s3007).find(".slideresult").empty();
+	$("input[type=checkbox]").each(function() {
+		this.checked = false;
+		this.disabled = false;
+	});
+	$('.optionIcon').removeClass('optionCorrect');
+}
+</script>
+<div class="pagecontent">
+	<div id="s3007" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">Step 2: Prepare for the Sales Call</div>
+		</div>
+		<div class="slidecontent">
+			<div class="slidequestion"></div>
+			<div class="optionsarea orangeboximg">
+				<div class="slideoptions"> </div>
+			</div>
+			<div class="slideresult"></div>
+		</div>
+		<img class="stepIcon" src="mod3/assets/imgs/iconStep_02.png" alt="Step 2 Icon"/>
+		<img class="rightSideImg" src="mod3/assets/imgs/img_s3007.png" alt="3007"/>
+	</div>
+</div>

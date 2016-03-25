@@ -1,0 +1,76 @@
+<style>
+#s0006 .slidecontent {
+	height: 450px;
+}
+#s0006 .animCrush {
+	width: 990px;
+	height: 450px;
+	margin: 0 auto;
+}
+#s0006 .animImg {
+	position: absolute;
+}
+img#s0006_imgCrush {
+	left: 320px;
+	width: 350px;
+	height: 400px;
+	z-index: 4;
+}
+img#s0006_logo_fordOval {
+	top: 125px;
+	left: 320px;
+	width: 350px;
+	height: 125px;
+	z-index: 5;
+}
+img#s0006_imgStampLeft {
+	width: 495px;
+	height: 421px;
+	left: -200px;
+	z-index: 6;
+}
+img#s0006_imgStampRight {
+	width: 495px;
+	height: 421px;
+	right: -200px;
+	z-index: 6;
+}
+</style>
+<script type="text/javascript">
+var tl0006;
+$(document).ready(function() {
+	stdPageInit("s0006");
+	TweenMax.set(".animCrush", {transformPerspective: 500});
+	var s0006_b1 = $("#s0006_b1");
+	var s0006_img = $("#s0006_img");
+	var img_stampLeft = $("#s0006_imgStampLeft");
+	var img_stampRight = $("#s0006_imgStampRight");
+	tl0006 = new TimelineMax({paused: false});
+	tl0006.add(TweenMax.to("#s0006_logo_fordOval", 0, {opacity: 0, scale: 0.5, z: "-=250"}));
+	tl0006.add(TweenMax.to(img_stampLeft, 2, {left: "+=200px"}), 2);
+	tl0006.add(TweenMax.to(img_stampRight, 2, {right: "+=200px"}), 2);
+	tl0006.add(TweenMax.to("#s0006_imgCrush", 2, {scaleX: 0}), 2);
+	var tl006a = new TimelineMax({paused: false});
+	tl006a.add(TweenMax.to(img_stampLeft, 1.5, {left: "-=200px", ease: "easeOutBounce"}), 1);
+	tl006a.add(TweenMax.to(img_stampRight, 1.5, {right: "-=200px", ease: "easeOutBounce"}), 1);
+	tl0006.add(tl006a);
+	tl0006.add(TweenMax.to("#s0006_logo_fordOval", 1.5, {opacity: 1, scale: 1, z: "+=250", ease: "easeOutBack"}));
+});
+function p6_init() {stdAudioInit('mod1/assets/audio/FordCBS_0006.mp3', tl0006);}
+function p6_out() {tl0006.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s0006" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">STOP Losing Commercial Business<br/>to these Competitors!</div>
+		</div>
+		<div class="slidecontent">
+			<div class="animCrush">
+				<img id="s0006_imgCrush" class="animImg" src="mod1/assets/imgs/logos_crush.png" alt="crush"/>
+				<img id="s0006_logo_fordOval" class="animImg img_ie" src="mod1/assets/imgs/logo_fordOval.png" alt="crush"/>
+				<img id="s0006_imgStampLeft" class="animImg" src="mod1/assets/imgs/stampLeft.png" alt="stampleft"/>
+				<img id="s0006_imgStampRight" class="animImg" src="mod1/assets/imgs/stampRight.png" alt="stampRight"/>
+			</div>
+		</div>
+	</div>
+</div>

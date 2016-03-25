@@ -1,0 +1,17 @@
+
+***********************************************************
+*** Alteris Group Course 3601W For Ford RE&T ***
+***********************************************************
+
+Developed By:
+Drew Beaman dbeaman@alterisgroup.com
+
+07.03.2014
+-- Sent to FORD RE&T for Production
+
+
+06.22.2014
+- Fixed Issues related to “incomplete state not getting sent” issue – the code provided in 1.1.1 does not check for the proper SCORM status coming in.
+- Added check for "not attempted" in addition to "na" and "undefined"
+
+

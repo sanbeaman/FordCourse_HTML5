@@ -1,0 +1,109 @@
+<style>
+#s3024 .slideheader {
+	margin-bottom: 0;
+}
+#s3024 .slidecontent {
+	position: relative;
+	padding-top: 10px;
+}
+#s3024 img.stepIcon {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	top: 52px;
+	right: 30px;
+}
+#s3024 .sliderow {
+	width: 100%;
+	height: 450px;
+}
+#s3024 .slideTxtBox {
+	position: relative;
+	display: inline-block;
+	height: 450px;
+	width: 330px;
+	font-size: 14pt;
+	line-height: 14pt;
+	vertical-align: middle;
+}
+#s3024 .slideImgBox {
+	position: relative;
+	display: inline-block;
+	width: 666px;
+	height: 450px;
+	vertical-align: top;
+}
+#s3024 .slideImgBox {
+	position: absolute;
+}
+img#img3024a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 5;
+}
+img#img3024b {
+	position: absolute;
+	top: 180px;
+	left: 200px;
+	z-index: 10;
+}
+#s3024 .calloutTxt {
+	top: 120px;
+	left: 50px;
+	width: 280px;
+	font-size: 14pt;
+	line-height: 14pt;
+}
+</style>
+<script type="text/javascript">
+var tl3024;
+$(document).ready(function() {
+	stdPageInit("s3024");
+	tl3024 = new TimelineMax({paused: false});
+	$.getJSON('mod3/assets/data/s3024.json', function(data) {
+		//console.log(data);
+		var imgitem;
+		var ibox = $("#s3024").find(".slideImgBox");
+		var imgs3024 = new Array();
+		$.each(data["sdata3024"], function(i, item) {
+			var imgitem = $("<img/>", {id: item.id, src: item.imgurl});
+			$(imgitem).css({
+				"position": "absolute",
+				"width": item.width + "px",
+				"height": item.height + "px",
+				"top": item.ypos + "px",
+				"left": item.xpos + "px",
+				"z-index": item.zindex + 10
+			});
+			$(imgitem).appendTo(ibox);
+			tl3024.add(TweenMax.to(imgitem, 0, {opacity: 0, scale: 0.5}, 0.5));
+			imgs3024.push($(imgitem));
+		});
+		tl3024.addPause();
+		buildcollage(imgs3024);
+	});
+});
+function buildcollage(imgarray) {
+	tl3024.add(TweenMax.staggerTo(imgarray, 2, {opacity: 1, scale: 1, ease: "easeOutBack"}, 1.5));
+}
+function p18_init() {stdAudioInit('mod3/assets/audio/FordCBS_3024.mp3', tl3024);}
+function p18_out() {tl3024.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s3024" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">Step 3: Present the Proposal<br/>Presentation Materials</div>
+		</div>
+		<div class="slidecontent">
+			<div class="sliderow orangevertline">
+				<div class="slideTxtBox">
+					<div id="txt3024a" class="calloutTxt">Michelle assembles the Customer Sales Presentation Kit in the Commercial Vehicle Presentation folder and adds a QFC credit application, relevant presentation materials and brochures, and the completed worksheets from the Commercial Cost-Per-Mile Value Builder Quick Quote Tool.</div>
+				</div>
+				<div class="slideImgBox">
+				</div>
+			</div>
+		</div>
+		<img class="stepIcon" src="mod3/assets/imgs/iconStep_03.png" alt="Step 3 Icon"/>
+	</div>
+</div>

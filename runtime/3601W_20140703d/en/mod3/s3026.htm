@@ -1,0 +1,199 @@
+<style>
+#s3026 .slideContent {
+	position: relative;
+	height: 450px;
+	padding-bottom: 10px;
+}
+.boxIcon p	{
+	position:absolute;
+	font-size:14pt;
+	font-weight:bold;
+	color: #425968;
+	margin:0;
+	padding:0;
+	width:110px;
+}
+#mapanim3026 {
+	height: 450px;
+	margin: auto;
+	position: relative;
+	width: 900px;
+	background-image:url("mod3/assets/imgs/backArrows.png");
+	background-repeat:no-repeat;
+	background-position:158px 40px;
+}
+.mapText{
+	position:absolute;
+	width: 330px;
+	left: 300px;
+	top: 175px;
+	text-align:center;
+	font-size:14pt;
+	font-weight:bold;
+	color: #425968;
+}
+.mapText span {
+	color: #f15d22;
+}
+.boxQualifyCustomer {
+	position: absolute;
+	left: 35px;
+	top: 50px;
+	height: 112px;
+	width: 224px;
+}
+.boxPrepCall {
+	position: absolute;
+	left: 440px;
+	top: 0;
+	height: 112px;
+	width: 224px;
+	 /*
+	 background-image:url("assets/imgs/iconPrep.png");
+	 background-repeat:no-repeat;
+	 background-position:left top;
+	 */
+}
+.boxPresentProposal {
+	position: absolute;
+	left: 678px;
+	top: 156px;
+	height: 112px;
+	width: 224px;
+	/*
+	background-image:url("assets/imgs/iconPresent.png");
+	background-repeat:no-repeat;
+	background-position:left top;
+	*/
+}
+.boxCloseSales {
+	position: absolute;
+	left: 486px;
+	top: 316px;
+	height: 112px;
+	width: 224px;
+	/*
+	background-image:url("assets/imgs/iconClose.png");
+	background-repeat:no-repeat;
+	background-position:left top;
+	*/
+}
+.boxMaintainRelationship {
+	position: absolute;
+	left: 100px;
+	top: 275px;
+	height: 112px;
+	width: 224px;
+	/*
+	background-image:url("assets/imgs/iconMaintain.png");
+	background-repeat:no-repeat;
+	background-position:right top;
+	*/
+}
+/*
+#iconQualify {
+	position:absolute;
+	right:0;
+	top:0;
+}
+*/
+.iconQualify img , .iconMaintain img {
+	position:absolute;
+	right:0;
+	top:0;
+}
+.iconPrep img , .iconPresent img , .iconClose img {
+	position:absolute;
+	left:0;
+	top:0;
+}
+.boxMaintainRelationship .txtInteractive {
+	bottom:0;
+}
+.iconActive {
+	opacity:1;
+	z-index:5;
+}
+.iconActive {
+	opacity:1;
+	z-index:10;
+}
+.txtPrep {
+	left:114px;
+	top:0;
+}
+.txtPresent {
+	left:116px;
+	top:30px;
+}
+.txtClose {
+	left:116px;
+	bottom:0;
+}
+.txtMaintain {
+	left:0;
+	bottom:0;
+}
+</style>
+<script type="text/javascript">
+var mapicons3026;
+var tl3026;
+$(document).ready(function() {
+	stdPageInit("s3026");
+	mapicons3026 = $("#mapanim3026").find(".iconActive");
+	tl3026 = new TimelineMax();
+	tl3026.add(TweenMax.to(mapicons3026, 0, {opacity:0}));
+	tl3026.addPause();
+	var step4icon = $("#mapanim3026").find(".iconClose .iconActive");
+	var step5icon = $("#mapanim3026").find(".iconMaintain .iconActive");
+	tl3026.add(TweenMax.to(step4icon, 0.5, {opacity:1}),3);
+	tl3026.add(TweenMax.to(step5icon, 0.5, {opacity:1}));
+});
+function p20_init() {stdAudioInit('mod3/assets/audio/FordCBS_3026.mp3',tl3026);}
+function p20_out() {tl3026.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s3026" class="slideholder">
+		<div class="slideheader"><div class="slideheadertext">The Sales Approach</div></div>
+		<div class="slidecontent">
+			<div id="mapanim3026">
+				<div class="mapText"><span>The Key Principles are:</span><br/>Show concern for customer’s business<br/>Establish trust<br/>Demonstrate credibility</div>
+					<div class="boxQualifyCustomer boxIcon">
+					<div class="iconQualify">
+						<img class="iconActive" src="mod3/assets/imgs/iconQualify_active.png" alt="Qualify the Customer"/>
+						<img class="iconNormal" src="mod3/assets/imgs/iconQualify.png" alt="Qualify the Customer"/>
+					</div>
+					<p class="txtQualify">Qualify the Customer</p>
+				</div>
+				<div class="boxPrepCall boxIcon">
+					<div class="iconPrep">
+						<img class="iconActive" src="mod3/assets/imgs/iconPrep_active.png" alt="Prepare for the sales call"/>
+						<img class="iconNormal" src="mod3/assets/imgs/iconPrep.png" alt="Prepare for the sales call"/>
+					</div>
+					<p class="txtPrep">Prepare for the Sales Call</p>
+				</div>
+				<div class="boxPresentProposal boxIcon">
+					<div class="iconPresent">
+						<img class="iconActive" src="mod3/assets/imgs/iconPresent_active.png" alt="Present the Proposal"/>
+						<img class="iconNormal" src="mod3/assets/imgs/iconPresent.png" alt="Present the Proposal"/>
+					</div>
+					<p class="txtPresent">Present the Proposal</p>
+				</div>
+				<div class="boxCloseSales boxIcon">
+					<div class="iconClose">
+						<img class="iconActive" src="mod3/assets/imgs/iconClose_active.png" alt="Close the Sale"/>
+						<img class="iconNormal" src="mod3/assets/imgs/iconClose.png" alt="Close the Sale"/>
+					</div>
+					<p class="txtClose">Close the Sale</p>
+				</div>
+				<div class="boxMaintainRelationship boxIcon">
+					<div class="iconMaintain">
+						<img class="iconActive" src="mod3/assets/imgs/iconMaintain_active.png" alt="Maintain the Relationship"/>
+						<img class="iconNormal" src="mod3/assets/imgs/iconMaintain.png" alt="Maintain the Relationship"/>
+					</div>
+					<p class="txtMaintain">Maintain the Relationship</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

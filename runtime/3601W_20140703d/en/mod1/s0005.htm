@@ -1,0 +1,56 @@
+<style>
+#s0005 .slidecontent {
+	height: 400px;
+}
+#s0005 .sliderow {
+	top: 30px;
+	height: 330px;
+}
+#s0005 .slidebullets_small {
+	position: relative;
+	top: 60px;
+	padding-left: 60px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	width: 400px;
+}
+#s0005 .sideright {
+	position: absolute;
+	top: 0;
+	right: 40px;
+}
+</style>
+<script type="text/javascript">
+var tl0005;
+$(document).ready(function() {
+	stdPageInit("s0005");
+	var s0005_b1 = $("#s0005_b1");
+	var s0005_img = $("#s0005_img");
+	tl0005 = new TimelineMax({paused: false});
+	tl0005.add(TweenMax.to(s0005_b1, 0, {opacity: 0}), 0);
+	tl0005.add(TweenMax.to(s0005_img, 0, {opacity: 0}), 0);
+	tl0005.addPause();
+	tl0005.add(TweenMax.to(s0005_img, 2, {opacity: 1}), 2);
+	tl0005.add(TweenMax.to(s0005_b1, 1, {opacity: 1}), 8);
+});
+function p5_init() {stdAudioInit('mod1/assets/audio/FordCBS_0005.mp3', tl0005);}
+function p5_out() {tl0005.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s0005" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">Are You Losing Commercial Business
+				<br/>to Competitors Like This?</div>
+		</div>
+		<div class="slidecontent">
+			<div class="sliderow orangeboximg">
+				<div class="slidebullets_small">
+					<ul class="arrowlist_small">
+						<li id="s0005_b1" class="arrowbullet_small">Other OEMs and companies with fleet management services have professional presentations</li>
+					</ul>
+				</div>
+			</div>
+			<img id="s0005_img" class="sideright img_ie" src="mod1/assets/imgs/s0005.png" alt="s0005"/>
+		</div>
+	</div>
+</div>

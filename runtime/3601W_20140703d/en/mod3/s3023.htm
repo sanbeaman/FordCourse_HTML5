@@ -1,0 +1,193 @@
+<style>
+#s3023 .slidecontent {
+	position: relative;
+	width: 100%;
+	height: 420px;
+}
+#s3023 .slideContentTop {
+	height: 40px;
+	width: 100%;
+	overflow: visible;
+}
+#s3023 .slideContentTop #slideTxt3023 {
+	position: absolute;
+	text-align: center;
+	left: 360px;
+	/*
+	margin-left: 40px;
+	float: left;
+	*/
+}
+#s3023 img.stepIcon {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	top: 42px;
+	right: 30px;
+}
+#s3023 .sliderow {
+	margin-left: 35px;
+	margin-right: 35px;
+	/*border: 1px solid black;*/
+	text-align: justify;
+}
+#s3023 .sliderow:after {
+	content: "";
+	width: 100%;
+	display: inline-block;
+}
+#s3023 .clickImgArrow {
+	vertical-align: top;
+	padding: 4px;
+	width: 300px;
+	height: 228px;
+	display: inline-block;
+}
+#s3023 img.clickphoto {
+	z-index: -1;
+}
+#s3023 img.clickphoto:hover {
+	cursor: pointer;
+	z-index: -1;
+	background-color: #f15d22;
+}
+#s3023 .clickArrowCover {
+	position: relative;
+	display: table-cell;
+	vertical-align: middle;
+	background-color: none;
+	width: 300px;
+	height: 260px;
+	padding-left: 15px;
+	padding-right: 15px;
+	text-align: center;
+	font-size: 14px;
+	line-height: 14px;
+	font-weight: bold;
+	color: #ffffff;
+	background: url('images/shell/arrowCoverUp.png') no-repeat top center;
+}
+</style>
+<script type="text/javascript">
+var tl3023;
+var s3023_clickPhotos;
+var s3023_arrowCovers;
+var s3023_arrowTxt;
+var s3023_allClicked;
+$(document).ready(function() {
+	stdPageInit("s3023");
+	//s3023_clickPhotos = $("#s3023").find(".clickphoto");
+	//var ci3023arrows = $(".clickArrowCover");
+	s3023_arrowCovers = $("#s3023").find(".clickArrowCover");
+	s3023_arrowTxt = $("#s3023").find(".clickcovertext");
+	s3023_allClicked = s3023_arrowCovers.length;
+	tl3023 = new TimelineMax();
+	tl3023.add(TweenMax.to("#s3023_img01", 0, {autoAlpha: 0, x: "+=300px"}));
+	tl3023.add(TweenMax.to("#s3023_img02", 0, {autoAlpha: 0, x: "+=300px"}));
+	tl3023.add(TweenMax.to("#s3023_img03",0, {autoAlpha: 0, x: "+=300px"}));
+	tl3023.add(TweenMax.to(s3023_arrowTxt, 0, {opacity: 0}));
+	tl3023.add(TweenMax.to(s3023_arrowCovers, 0, {opacity: 0}));
+	tl3023.addPause();
+	tl3023.add(TweenMax.to("#s3023_img01", 1, {autoAlpha: 1, x: "-=300px"}), 2);
+	tl3023.add(TweenMax.to("#s3023_img02", 1, {autoAlpha: 1, x: "-=300px"}));
+	tl3023.add(TweenMax.to("#s3023_img03", 1, {autoAlpha: 1, x: "-=300px"}));
+	$("#s3023_img01").on("click", {imgid: "3023A", txtid: "s3023_txt01"}, s3023_animateCoverArrow);
+	$("#s3023_img02").on("click", {imgid: "3023B", txtid: "s3023_txt02"}, s3023_animateCoverArrow);
+	$("#s3023_img03").on("click", {imgid: "3023C", txtid: "s3023_txt03"}, s3023_animateCoverArrow);
+	/*
+	$("#s3023_img01").on('mouseenter', {clickId: '#s3023_img01'}, s3023_mouseEnter);
+	$("#s3023_img01").on('mouseleave', {clickId: '#s3023_img01'}, s3023_mouseLeave);
+	$("#s3023_img02").on('mouseenter', {clickId: '#s3023_img02'}, s3023_mouseEnter);
+	$("#s3023_img02").on('mouseleave', {clickId: '#s3023_img02'}, s3023_mouseLeave);
+	$("#s3023_img03").on('mouseenter', {clickId: '#s3023_img03'}, s3023_mouseEnter);
+	$("#s3023_img03").on('mouseleave', {clickId: '#s3023_img03'}, s3023_mouseLeave);
+	*/
+});
+function s3023_mouseEnter(mevt) {
+	var clickidme = mevt.data.clickId;
+	TweenMax.to($(clickidme), 0.1, {z: "+=100", scale: 1.1});
+}
+function s3023_mouseLeave(mevt) {
+	var clickidlv = mevt.data.clickId;
+	TweenMax.to($(clickidlv), 0.2, {z: "-=100", scale: 1});
+}
+function s3023_animateCoverArrow(evt) {
+	var itemid = evt.data.imgid;
+	var txtid = evt.data.txtid;
+	//console.log('itemnum'+ itemid);
+	var idArrowCover = "#arrowCover" + itemid;
+	var idArrowtxt = "#"+txtid;
+	var urlAudio = 'mod3/assets/audio/FordCBS_' + itemid + '.mp3';
+	var jqid = $(idArrowCover);
+	//console.log("opacity= "+ jqid.css("opacity"));
+	if (jqid.css("opacity") > 0) {
+		AudioPlayer.resetAudio(urlAudio);
+	} else {
+		TweenMax.to($(idArrowCover), 1, {
+			opacity: 1,
+			top: "-=100px",
+			onComplete: function() {
+				// Animation complete.
+				TweenMax.to($(idArrowtxt),1,{opacity:1});
+				AudioPlayer.resetAudio(urlAudio);
+				s3023_allClicked = s3023_allClicked - 1;
+				checkIfAllClicked();
+			}
+		});
+	}
+}
+function checkIfAllClicked() {
+	if (s3023_allClicked < 1) {
+		// when complete, reset impediment to allow page transitions
+		WBTApp.setImpedimentComplete();
+	} else {
+	}
+}
+function p17_init() {
+	isCurrentPageTracked(17, true, "Please complete all required activities on this page");
+	stdAudioInit('mod3/assets/audio/FordCBS_3023.mp3', tl3023);
+}
+function p17_out() {
+	$(".clickArrowCover").hide();
+	tl3023.progress(0).pause();
+}
+</script>
+<div class="pagecontent">
+	<div id="s3023" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">Ford Credit Financing Completes the Solution</div>
+		</div>
+		<div class="slidecontent">
+			<div class="slideContentTop">
+				<div id="slideTxt3023">Click on each customer page image for an example.</div>
+			</div>
+			<div class="sliderow">
+				<div id="ci3023A" class="clickImgArrow">
+					<div id="s3023_img01">
+					<img class="clickphoto" src="mod3/assets/imgs/3023A.png" alt="img1"/>
+					</div>
+					<div id="arrowCover3023A" class="clickArrowCover">
+						<div id="s3023_txt01" class="clickcovertext">For her lease customers, Michelle inserts the CommerciaLease Quick Quote she calculated into the presentation. For customers who are not leasing, she simply deletes this page.</div>
+					</div>
+				</div>
+				<div id="ci3023B" class="clickImgArrow">
+					<div id="s3023_img02">
+					<img	class="clickphoto" src="mod3/assets/imgs/3023B.png" alt="img2"/>
+						</div>
+					<div id="arrowCover3023B" class="clickArrowCover">
+						<div id="s3023_txt02" class="clickcovertext">In the Ford Credit section, Michelle keeps the slide for the financing she is recommending and deletes the other slides.</div>
+					</div>
+				</div>
+				<div id="ci3023C" class="clickImgArrow">
+					<div id="s3023_img03">
+					<img	class="clickphoto" src="mod3/assets/imgs/3023C.png" alt="img3"/>
+					</div>
+					<div id="arrowCover3023C" class="clickArrowCover">
+						<div id="s3023_txt03" class="clickcovertext">Then, Michelle adds the cost-per-mile and Premium Maintenance savings worksheets to the proposal.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<img class="stepIcon" src="mod3/assets/imgs/iconStep_03.png" alt="Qualify the Customer"/>
+	</div>
+</div>

@@ -1,0 +1,68 @@
+<style>
+#s2003 .slidecontent {
+	margin-top: 0;
+	padding-bottom: 40px;
+}
+#s2003 .slidecontent_top {
+	margin-top:10px;
+	height: 60px;
+	width: 100%;
+	padding-bottom: 10px;
+}
+#s2003 .slidecontent_top .imgCenter {
+	position: relative;
+	height: 65px;
+	width: 335px;
+	margin: 0 auto;
+}
+#s2003 .sliderow {
+	margin-top: 10px;
+}
+#s2003 li.headbullet {
+	font-weight: bold;
+	color: #ffffff;
+}
+</style>
+<script type="text/javascript">
+var s2003_bulletlis;
+var tl2003;
+$(document).ready(function() {
+	stdPageInit("s2003");
+	TweenMax.set("#s2003_logo", {transformPerspective:500});
+	s2003_bulletlis = $("#s2003").find("li");
+	//TweenMax.to(bulletli, 0, {opacity:0});
+	tl2003 = new TimelineMax({paused:false});
+	tl2003.add(TweenMax.to("#s2003_logo", 0, {opacity:0, scale:0.5, z:"-=300"}));
+	tl2003.add(TweenMax.to(s2003_bulletlis, 0, {opacity:0}));
+	tl2003.addPause();
+	tl2003.add(TweenMax.to("#s2003_logo", 3, {opacity:1, scale:1, z:"+=300", ease:"easeOutBack"}));
+	tl2003.add(TweenMax.to("#s2003_b0", 1, {opacity:1}));
+	tl2003.add(TweenMax.to("#s2003_b1", 1, {opacity:1}),13);
+	tl2003.add(TweenMax.to("#s2003_b2", 1, {opacity:1}),21);
+	tl2003.add(TweenMax.to("#s2003_b3", 1, {opacity:1}),29);
+	tl2003.add(TweenMax.to("#s2003_b4", 1, {opacity:1}),44);
+	tl2003.add(TweenMax.to("#s2003_b5", 1, {opacity:1}),50);
+});
+function p4_init() {stdAudioInit('mod2/assets/audio/FordCBS_2003.mp3',tl2003);}
+function p4_out() {tl2003.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s2003" class="slideholder">
+		<div class="slideheader"><div class="slideheadertext">Why ESP?<br/>PremiumCARE and Premium Maintenance Plans</div></div>
+		<div class="slidecontent">
+			<div class="slidecontent_top"><div class="imgCenter"><img id="s2003_logo" src="mod2/assets/imgs/logo_fordesp.png" alt="logo esp"/></div></div>
+			<div class="sliderow orangeboximg">
+				<div class="slidebullets">
+					<ul class="arrowlist">
+						<li id="s2003_b0" class="headbullet" >Advantages:</li>
+						<li id="s2003_b1" class="arrowbullet">Money-saving solutions with  zero-deductible</li>
+						<li id="s2003_b2" class="arrowbullet">Customizable to help control costs and reduce operating expenses</li>
+						<li id="s2003_b3" class="arrowbullet">Ford/Lincoln/Quick Lane national network of factory-trained technicians using genuine OE parts ensure quality repairs</li>
+						<li id="s2003_b4" class="arrowbullet">Roadside Assistance with destination assistance and travel reimbursement</li>
+						<li id="s2003_b5" class="arrowbullet">Wear and tear of covered components</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

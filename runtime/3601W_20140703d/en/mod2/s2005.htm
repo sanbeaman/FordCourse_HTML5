@@ -1,0 +1,99 @@
+<style>
+#s2005 .slidecontent {
+	margin-top: 0;
+	height: 450px;
+	padding-bottom: 40px;
+}
+#s2005 .sliderow {
+	margin-top: 20px;
+	height: 300px;
+}
+#s2005 .splitCol {
+	position: relative;
+	left: 40px;
+	width: 440px;
+}
+#s2005 .slidecontent_top {
+	height: 65px;
+	width: 100%;
+}
+#s2005 .slidecontent_top	.imgCenter {
+	position: relative;
+	height: 65px;
+	width: 335px;
+	margin: 0 auto;
+}
+#s2005	.splitCol  {
+	float: left;
+	padding: 10px;
+}
+#s2005 li.headbullet {
+	color:#ffffff;
+}
+</style>
+<script type="text/javascript">
+var s2005_bulletlis;
+var tl2005;
+$(document).ready(function() {
+	stdPageInit("s2005");
+	s2005_bulletlis = $("#s2005").find("li");
+	//TweenMax.to(bulletli, 0, {opacity:0});
+	tl2005 = new TimelineMax({paused:false});
+	tl2005.add(TweenMax.to(s2005_bulletlis, 0, {opacity:0}));
+	tl2005.addPause();
+	tl2005.add(TweenMax.to("#s2005_bl0", 1, {opacity:1}),6);
+	tl2005.add(TweenMax.to("#s2005_bl1", 1, {opacity:1}),15);
+	tl2005.add(TweenMax.to("#s2005_bl2", 1, {opacity:1}),17);
+	tl2005.add(TweenMax.to("#s2005_bl3", 1, {opacity:1}),21);
+	tl2005.add(TweenMax.to("#s2005_bl4", 1, {opacity:1}),29);
+	tl2005.add(TweenMax.to("#s2005_bl5", 1, {opacity:1}),31);
+	tl2005.add(TweenMax.to("#s2005_bl6", 1, {opacity:1}),33);
+	tl2005.add(TweenMax.to("#s2005_br0", 1, {opacity:1}),41);
+	tl2005.add(TweenMax.to("#s2005_br1", 1, {opacity:1}),46);
+	tl2005.add(TweenMax.to("#s2005_br2", 1, {opacity:1}),48);
+	tl2005.add(TweenMax.to("#s2005_br3", 1, {opacity:1}),52);
+	tl2005.add(TweenMax.to("#s2005_br4", 1, {opacity:1}),53);
+	tl2005.add(TweenMax.to("#s2005_br5", 1, {opacity:1}),57);
+	//tl2005.add(TweenMax.staggerTo(s2005_bulletlis, 2, {opacity:1}, 1));
+});
+function p6_init() {stdAudioInit('mod2/assets/audio/FordCBS_2005.mp3',tl2005);}
+function p6_out() {tl2005.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s2005" class="slideholder">
+		<div class="slideheader"><div class="slideheadertext">YOU Have the Strongest Solution in the Marketplace!</div></div>
+		<div class="slidecontent">
+			<div class="slidecontent_top">
+				<div class="splitCol"><div class="imgCenter"><img id="s2005_logoL" src="mod2/assets/imgs/logo_fordesp.png" alt="logo esp"/></div></div>
+				<div class="splitCol"><div class="imgCenter"><img id="s2005_logoL" src="mod2/assets/imgs/logo_fordqfc.png" alt="logo esp"/></div></div>
+			</div>
+			<div class="sliderow orangeboximg">
+				<div class="splitCol">
+					<div class="slidebullets_small">
+						<ul class="arrowlist_small">
+							<li id="s2005_bl0" class="headbullet">Competitors' Potential Weaknesses:</li>
+							<li id="s2005_bl1" class="arrowbullet_small">Terms don’t meet usage requirements</li>
+							<li id="s2005_bl2" class="arrowbullet_small">Repairs delayed to negotiate cost of service</li>
+							<li id="s2005_bl3" class="arrowbullet_small">May not ensure maintenance/ repairs are performed by factory-trained technicians using genuine OE parts</li>
+							<li id="s2005_bl4" class="arrowbullet_small">Have wear and tear exclusions</li>
+							<li id="s2005_bl5" class="arrowbullet_small">Have warranty limitations</li>
+							<li id="s2005_bl6" class="arrowbullet_small">Include rental car provisions</li>
+						</ul>
+					</div>
+				</div>
+				<div class="splitCol">
+					<div class="slidebullets_small">
+						<ul class="arrowlist_small">
+							<li id="s2005_br0" class="headbullet">Competitors' Potential Weaknesses:</li>
+							<li id="s2005_br1" class="arrowbullet_small">May have maintenance limitations</li>
+							<li id="s2005_br2" class="arrowbullet_small">May have limitations on non-covered purchases/services</li>
+							<li id="s2005_br3" class="arrowbullet_small">May not cover mixed fleets</li>
+							<li id="s2005_br4" class="arrowbullet_small">May not offer spending controls</li>
+							<li id="s2005_br5" class="arrowbullet_small">May not offer online fleet service management</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,250 @@
+/* Module CSS */
+#header #course-title {
+	width: 45%;
+}
+#header #topic-title, #header #page-title {
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 40%;
+	height: 20px;
+}
+#header #page-title {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+#header #topic-title {
+	margin-top: 6px;
+	margin-bottom: 0;
+}
+.audio-wrapper {
+	position: fixed;
+	right: 70px;
+	bottom: 0;
+	width:330px;
+	height:30px;
+	border: solid 1xp #f15d22;
+	z-index: 90;
+}
+.scroll-pane-wrapper {
+	position:absolute;
+	top:460px;
+	left:35px;
+	width:600px;
+	height:80px;
+	visibility:hidden;
+	z-index: 66;
+}
+.scroll-pane {
+	background-color: #cccccc;
+	padding-left: 10px;
+	width: 540px;
+	height: 80px;
+	overflow: auto;
+}
+.scroll-pane p {
+	font-size:10pt;
+	color:#000000;
+	font-style:italic;
+	letter-spacing:0;
+}
+.scroll-pane b {
+	font-size:10pt;
+	color:#000000;
+	font-style:italic;
+	letter-spacing:0;
+}
+.jspPane {
+	position: absolute;
+	width: 500px; !important;
+}
+.slideholder {
+	position: relative;
+	width:100%;
+	background:transparent url(../images/shell/back_whitesq.png) repeat;
+	/*z-index: -10;*/
+}
+.slideheader {
+	background-image:url(../images/shell/slideheader_arrows.png);
+	background-repeat:no-repeat;
+	background-position: 600px 0;
+	height:50px;
+	margin: 20px 0;
+	overflow: visible;
+}
+.slideContentBottom {
+	margin:0;
+	position: relative;
+	height: 65px;
+	width: 100%;
+	overflow:visible;
+}
+.slideheadertext {
+	/*
+	height: 42px;
+	padding: 4px 10px 4px 35px;
+	*/
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 35px;
+	padding-right:10px;
+	width: 550px;
+	vertical-align:middle;
+	text-align: left;
+	font-size: 150%;
+	line-height: 100%;
+	/*
+	font-size: 24pt;
+	line-height: 24pt;
+	*/
+	font-weight:bold;
+	color: #425968;
+}
+.slidecontent {
+	/*margin-top: 10px;*/
+	background-color: transparent;
+}
+.slidefooter {
+	background:url(../images/shell/slidefooter_arrows.png) repeat-x -40px 0;
+	overflow:visible;
+	height:50px;
+	width:100%;
+	margin-top: 20px;
+}
+.titleslide {
+	background:transparent;
+}
+.titlebox {
+	background:url(../images/shell/back_orangesq.png) repeat;
+	margin: auto 0;
+	width: 100%;
+}
+.titleheader {
+	font-size:300%;
+	font-weight:bold;
+	color: #ffffff;
+	line-height: 100%;
+	padding: 10% 20%;
+}
+.orangeboximg {
+	background:transparent url(../images/shell/back_orangesq.png) repeat;
+	width: 100%;
+}
+.orangevertline {
+	background: transparent url(../images/shell/back_orangeVertLine.png) repeat-x;
+	height: 450px;
+	width: 100%;
+}
+.orangebox {
+	background-color: #f15d22;
+	width: 100%;
+}
+.fade0 {
+	opacity:-0.4;
+	filter:alpha(opacity=-40);
+}
+.fade40 {
+	opacity:0.4;
+	filter:alpha(opacity=40);
+}
+#slidestartContainer {
+	text-indent:-9000px;
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	z-index:1900;
+	border:1px solid #ffffff;
+	background:#666666 url(../images/shell/btn_startSlide.png) no-repeat center center;
+	display:none;
+	color:#ffffff;
+}
+.btn_videoLEE {
+	background: transparent url(../images/shell/btn_videoLEE.png);
+}
+.btn_videoJW {
+	background: transparent url(../images/shell/btn_videoJW.png);
+}
+.btn_video {
+	display: absolute;
+	border: none;
+	height: 65px;
+	width: 150px;
+	bottom: 10px;
+	right: 10px;
+	text-indent: -9999px;
+	background-color: transparent;
+}
+.btn_video:hover, .btn_video:focus {
+	background-position: 0 -65px;
+}
+.mejs-container {
+	/*background:#495156;*/
+}
+.mejs-controls .mejs-time-rail .mejs-time-current {
+	background: #f15d22;
+}
+.slidebullets {
+	padding: 20px 10%;
+	color: #ffffff;
+	font-size: 20pt;
+	line-height: 20pt;
+}
+ul.arrowlist	{
+	list-style-type:none;
+	margin: 0;
+	padding: 0;
+}
+li.arrowbullet {
+	background-color: transparent;
+	background-image: url(../images/shell/bullet_arrow.png);
+	background-repeat: no-repeat;
+	background-position: 0 2px;
+	padding-left: 26px;
+	padding-bottom:2px;
+}
+li.checkbullet {
+	background-color: transparent;
+	background-image: url(../images/shell/bullet_check.png);
+	background-repeat: no-repeat;
+	background-position: -22px 2px;
+	padding-left: 26px;
+	padding-bottom:2px;
+}
+li.headbullet {
+	color:#000000;
+	font-weight: bold;
+	padding-left: 0;
+	padding-bottom:2px;
+}
+.slidebullets_small {
+	padding: 10px 10px;
+	color: #ffffff;
+	font-size: 16pt;
+	line-height: 16pt;
+}
+ul.arrowlist_small	{
+	list-style-type:none;
+	margin: 0;
+	padding: 0;
+}
+li.arrowbullet_small {
+	background-color: transparent;
+	background-image: url(../images/shell/bullet_arrowsm.png);
+	background-repeat: no-repeat;
+	background-position: 0 2px;
+	padding-left: 26px;
+	padding-bottom:2px;
+}
+li.simplebullet {
+	font-size: 16pt;
+	color: #000000;
+	padding-left: 26px;
+	padding-bottom:2px;
+}
+img.img_ie {
+	background: transparent;
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)"; /* IE8 */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);	 /* IE6 & 7 */
+	zoom: 1;
+}

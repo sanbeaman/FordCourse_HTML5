@@ -1,0 +1,75 @@
+<style>
+#s2004 .slidecontent {
+	margin-top: 10px;
+	padding-bottom: 40px;
+}
+#s2004 .slidecontent_top {
+	height: 65px;
+	width: 100%;
+	padding-bottom: 10px;
+}
+#s2004 .slidecontent_top .imgCenter {
+	position: relative;
+	height: 60px;
+	width: 335px;
+	margin: 0 auto;
+}
+#s2004 .sliderow {
+	margin-top: 10px;
+}
+#s2004 li.headbullet {
+	font-weight: bold;
+	color: #ffffff;
+}
+</style>
+<script type="text/javascript">
+var s2004_bulletlis;
+var tl2004;
+$(document).ready(function() {
+	stdPageInit("s2004");
+	s2004_bulletlis = $("#s2004").find("li");
+	//TweenMax.to(bulletli, 0, {opacity:0});
+	TweenMax.set("#s2004_logo", {transformPerspective:500});
+	tl2004 = new TimelineMax({paused:false});
+	tl2004.add(TweenMax.to("#s2004_logo", 0, {opacity:0, scale:0.5, z:"-=300"}));
+	tl2004.add(TweenMax.to(s2004_bulletlis, 0, {opacity:0}));
+	tl2004.addPause();
+	tl2004.add(TweenMax.to("#s2004_logo", 3, {opacity:1, scale:1, z:"+=300", ease:"easeOutBack"}));
+	tl2004.add(TweenMax.to("#s2004_b0", 1, {opacity:1}),2);
+	tl2004.add(TweenMax.to("#s2004_b1", 1, {opacity:1}),15);
+	tl2004.add(TweenMax.to("#s2004_b2", 1, {opacity:1}),21);
+	tl2004.add(TweenMax.to("#s2004_b3", 1, {opacity:1}),29);
+	tl2004.add(TweenMax.to("#s2004_b4", 1, {opacity:1}),37);
+	tl2004.add(TweenMax.to("#s2004_b5", 1, {opacity:1}),45);
+	tl2004.add(TweenMax.to("#s2004_b6", 1, {opacity:1}),50);
+	tl2004.add(TweenMax.to("#s2004_b7", 1, {opacity:1}),56);
+	tl2004.add(TweenMax.to("#s2004_b8", 1, {opacity:1}),62);
+	tl2004.add(TweenMax.to("#s2004_b9", 1, {opacity:1}),69);
+});
+function p5_init() {stdAudioInit('mod2/assets/audio/FordCBS_2004.mp3',tl2004);}
+function p5_out() {tl2004.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s2004" class="slideholder">
+		<div class="slideheader"><div class="slideheadertext">Why QFC?</div></div>
+		<div class="slidecontent">
+			<div class="slidecontent_top"><div class="imgCenter"><img id="s2004_logo" src="mod2/assets/imgs/logo_fordqfc.png" alt="logo esp"/></div></div>
+			<div class="sliderow orangeboximg">
+				<div class="slidebullets">
+					<ul class="arrowlist">
+						<li id="s2004_b0" class="headbullet" >Advantages:</li>
+						<li id="s2004_b1" class="arrowbullet" >Cardless/cashless solution for fleet drivers</li>
+						<li id="s2004_b2" class="arrowbullet">Monthly billing for all services performed at Ford and Lincoln dealers and Quick Lane Tire and Auto Centers (U.S. and Canada)</li>
+						<li id="s2004_b3" class="arrowbullet">National Glass Program </li>
+						<li id="s2004_b4" class="arrowbullet">Enhanced Roadside Assistance</li>
+						<li id="s2004_b5" class="arrowbullet">Electronic billing via CD, FTP  or QFC </li>
+						<li id="s2004_b6" class="arrowbullet">Online services available through QFC</li>
+						<li id="s2004_b7" class="arrowbullet">Coverage displayed on OASIS including fleet account contact information</li>
+						<li id="s2004_b8" class="arrowbullet">Non-Ford vehicle eligibility</li>
+						<li id="s2004_b9" class="arrowbullet">Quality Fleet Care Parts Program (QFCP)</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

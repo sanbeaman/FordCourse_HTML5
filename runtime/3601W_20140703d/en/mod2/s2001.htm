@@ -1,0 +1,60 @@
+<style>
+#s2001 .slidecontent{
+	position: relative;
+	margin-top:40px;
+	padding-bottom: 40px;
+}
+#s2001 .sliderow {
+	position: relative;
+	width: 100%;
+	padding: 20px 0;
+}
+#s2001 .slidebullets {
+	width: 800px;
+	margin: 10px auto;
+	padding:20px 0;
+}
+#s2001 .arrowbullet_small{
+	margin-left: 40px;
+	background-position: 0 4px;
+	font-size: 18pt;
+	line-height: 18pt;
+}
+</style>
+<script type="text/javascript">
+var tl2001;
+$(document).ready(function () {
+	stdPageInit("s2001");
+	var li2001 = $("#s2001").find("li");
+	tl2001 = new TimelineMax({paused:false});
+	tl2001.add(TweenMax.to(li2001, 0, {opacity:0, paddingLeft:"+=100px"}));
+	tl2001.addPause();
+	tl2001.add(TweenMax.to("#s2001_b1", 2, {opacity:1, paddingLeft:"-=100px"}),1);
+	tl2001.add(TweenMax.to("#s2001_b1a", 2, {opacity:1, paddingLeft:"-=100px"}),20);
+	tl2001.add(TweenMax.to("#s2001_b1b", 2, {opacity:1, paddingLeft:"-=100px"}),28);
+	tl2001.add(TweenMax.to("#s2001_b1c", 2, {opacity:1, paddingLeft:"-=100px"}),30);
+	tl2001.add(TweenMax.to("#s2001_b1d", 2, {opacity:1, paddingLeft:"-=100px"}),33);
+});
+function p2_init() {stdAudioInit('mod2/assets/audio/FordCBS_2001.mp3',tl2001);}
+function p2_out() {tl2001.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s2001" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">What is Ford Commercial Business Solutions?</div>
+		</div>
+		<div class="slidecontent">
+			<div class="sliderow orangeboximg">
+				<div class="slidebullets">
+					<ul class="arrowlist">
+						<li id="s2001_b1" class="arrowbullet">A ONE Ford strategy that provides commercial customers a comprehensive, customized, total transportation solution</li>
+						<li id="s2001_b1a" class="arrowbullet_small">Supports one-stop shopping </li>
+						<li id="s2001_b1b" class="arrowbullet_small">Reduces life cycle costs</li>
+						<li id="s2001_b1c" class="arrowbullet_small">Improves operational efficiencies</li>
+						<li id="s2001_b1d" class="arrowbullet_small">Eliminates service variability</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

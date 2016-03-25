@@ -1,0 +1,321 @@
+<style>
+#slideoptions_s3010 button {
+	position:absolute;
+	right: 500px;
+	bottom: 10px;
+	width: auto;
+	padding: 5px 15px;
+	color:#ffffff;
+	background-color:#f15d22;
+	border: 1px solid #fff;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-decoration: none;
+}
+#slideoptions_s3010 button:disabled {
+	background-color:darkslategray;
+}
+#slideoptions_s3010 button:hover {
+	background-color:darkslategray;
+}
+/* Specific checkbox widget styles */
+.ui-checkbox {
+	font-size: 0.75em;
+	margin: 0.6em;
+}
+.slidequestion {
+	margin-left: 35px;
+	margin-right: 200px;
+	padding-top:0;
+	padding-bottom: 10px;
+	color: #425968;
+	font-size: 14pt;
+	line-height: 14pt;
+	text-align:left;
+}
+#slideresults_s3010 p {
+	margin-left: 10px;
+	margin-right: 10px;
+	padding-top:4px;
+	font-size: 10pt;
+	line-height: 10pt;
+	text-align:left;
+	color: #f15d22;
+}
+#s3010 .textarea1 {
+	position: relative;
+	display: inline-block;
+	font-size: 12pt;
+	left: 0;
+	width: 180px;
+	height: 348px;
+	padding-left:35px;
+	padding-right:10px;
+	vertical-align:middle;
+}
+#s3010 .formarea1 {
+	position: relative;
+	display: inline-block;
+	background:url('mod3/assets/imgs/form3010.png') no-repeat;
+	width: 747px;
+	height: 400px;
+	right:0;
+	top: 0;
+	vertical-align:top;
+	font-family: Arial, sans-serif;
+	font-size: 10pt;
+}
+#s3010 .formEnd {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#slideoptions_s3010 .formTxt {
+	font-size: 14pt;
+}
+#dd3010div {
+	position: absolute;
+	left: 4px;
+	top: 152px;
+	width: 206px;
+	height: 14pt;
+}
+select#dd3010 {
+	width: 206px;
+	height: 14pt;
+}
+#dd3011div {
+	position: absolute;
+	left: 230px;
+	top: 152px;
+	width: 110px;
+	height: 14pt;
+}
+#dd3012div {
+	position: absolute;
+	left: 4px;
+	top: 183px;
+	width: 206px;
+	height: 14pt;
+}
+select#dd3012 {
+	width: 206px;
+	height: 14pt;
+}
+#dd3013div {
+	position: absolute;
+	left: 230px;
+	top: 183px;
+	width: 110px;
+	height: 14pt;
+}
+select#dd3013 {
+	width: 110px;
+	height: 14pt;
+}
+div#tfield_vehicle3010 {
+	position: absolute;
+	left: 54px;
+	top: 260px;
+	width: 206px;
+	height: 14pt;
+	color:#000000;
+	background-color:#ffffff;
+	border: 1px solid #000000;
+}
+#dd3014div {
+	position: absolute;
+	left: 147px;
+	top: 281px;
+	width: 140px;
+	height: 14pt;
+}
+select#dd3014 {
+	width: 140px;
+	height: 14pt;
+}
+#dd3015div {
+	position: absolute;
+	left: 147px;
+	top: 303px;
+	width: 140px;
+	height: 14pt;
+}
+select#dd3015 {
+	width: 140px;
+	height: 14pt;
+}
+#s3010 .form_tfield {
+	color:#000000;
+	background-color:#ffffff;
+	border: 1px solid #000000;
+}
+#s3010 .tfield_result {
+	position: absolute;
+	left: 675px;
+	width: 50px;
+	height: 10pt;
+	font-size: 10pt;
+	text-align: right;
+}
+#tfield1 {
+	top: 339px;
+}
+#tfield2 {
+	top: 358px;
+}
+#tfield3 {
+	top: 378px;
+}
+#s3010 img.stepIcon {
+	position: absolute;
+	width:60px;
+	height:60px;
+	top: 52px;
+	right: 30px;
+}
+.activeFormElement {
+	border: 2px solid #ff0000;
+}
+</style>
+<script type="text/javascript">
+var is3010tracked;
+var q1;
+var ans3010 = [];
+var secObjs3010 = [];
+var submitbtnquiz;
+var slideid = "sform3010";
+var partCount = 0;
+var partTotal;
+var current3010object;
+$(document).ready(function () {
+	stdPageInit("s3010");
+	var vardiv, vardd, varddops;
+	$.getJSON("mod3/assets/data/s3010.json", function(json) {
+		//console.log(json); // this will show the info it in firebug console
+		$.each(json[slideid], function(i, item) {
+			if (item.etype == "dd") {
+				secObjs3010.push({id: item.id, slideTxt: item.txt, valueCorrect: item.valueCorrect, audioCorrect: item.audioCorrect, audioWrong: item.audioWrong});
+				vardiv = $("<div></div>");
+				$(vardiv).attr({id: item.id + "div"});
+				vardd = $("<select></select>");
+				$(vardd).attr({id: item.id});
+				varddops = item.ops;
+				var myop;
+				$.each(varddops, function(){
+					myop = $("<option>").val(this.op).text(this.op);
+					vardd.append(myop);
+				});
+				$(vardiv).append(vardd);
+				$("#formarea3010").append(vardiv);
+			} else if (item.etype == "tfield") {
+				var fieldcount = 0;
+				secObjs3010.push({id: item.id, slideTxt: item.txt, audioCorrect: item.audioCorrect});
+				varddops = item.ops;
+				var tfld,tfldid;
+				$.each(varddops, function() {
+					fieldcount = fieldcount+1
+					tfldid = "tfield" + fieldcount;
+					tfld = $("<div></div>");
+					$(tfld).attr({id: tfldid}).text(this.op).addClass("tfield_result");
+					$("#formarea3010").append(tfld);
+				});
+			} else {
+			}
+		});
+		var vechileText = $("<div></div>");
+		$(vechileText).attr({id: "tfield_vehicle3010"});
+		$("#formarea3010").append(vechileText);
+		partTotal = secObjs3010.length -1;
+	});
+});
+function setupNextPart(){
+	partCount = partCount +1;
+	var curobj = secObjs3010[partCount];
+	var ta = $("#s3010").find(".textarea1");
+	if (partCount >= partTotal) {
+		$("#s3010_formEnd").show();
+		$("#s3010").find(".tfield_result").show();
+		AudioPlayer.resetAudio('mod3/assets/audio/FordCBS_3016.mp3');
+		ta.text("").append(curobj.slideTxt);
+		WBTApp.setImpedimentComplete();
+	} else {
+		if (partCount == 1) {
+			$("#s3010").find("#tfield_vehicle3010").text(secObjs3010[0].valueCorrect);
+		}
+		ta.text("").append(curobj.slideTxt);
+		var curid = "select#"+ curobj.id;
+		$(curid).prop('disabled', false).addClass('activeFormElement');
+		$(curid).prop('disabled', false);
+		$(curid).on('change', {curobj: curobj}, checkdd);
+	}
+}
+function checkdd(evt){
+	var thisobj = evt.data.curobj;
+	//console.log("checking props"+ thisobj.valueCorrect);
+	if (thisobj.valueCorrect == $(this).val()) {
+		$(this).removeClass('activeFormElement');
+		$(this).prop("disabled", "disabled");
+		var newdiv = $("<div></div");
+		$(newdiv).attr({id: thisobj.id}).text(thisobj.valueCorrect).addClass("form_tfield");
+		$(this).replaceWith(newdiv);
+		AudioPlayer.resetAudio(thisobj.audioCorrect);
+		setupNextPart();
+	} else {
+		AudioPlayer.resetAudio(thisobj.audioWrong);
+	}
+}
+function setupForm3010() {
+	//console.log(" partTotal =" + partTotal);
+	var curobj = secObjs3010[0];
+	$("#s3010_formEnd").hide();
+	$("#s3010").find(".textarea1").append(curobj.slideTxt);
+	$("#formarea3010").find("select").prop("disabled", "disabled");
+	$('select#dd3010').prop('disabled', false).addClass('activeFormElement');
+	$('select#dd3010').prop('disabled', false);
+	$('select#dd3010').on('change', {curobj: curobj}, checkdd);
+	$("#s3010").find(".tfield_result").hide();
+	stdAudioInit('mod3/assets/audio/FordCBS_3010.mp3');
+}
+function completeForm3010() {
+	/*
+	$.each(secObjs3010, function() {
+		var selectid = "select#" + this.id;
+		var newdiv = $("<div></div");
+		$(newdiv).attr({id: this.id}).text(this.valueCorrect).addClass("form_tfield");
+		$(this).replaceWith(newdiv);
+		$("#formarea3010").find(selectid).replaceWith(newdiv);
+	});
+	$("#s3010").find("#tfield_vehicle3010").text(secObjs3010[0].valueCorrect);
+	stdAudioInit('mod3/assets/audio/FordCBS_3016.mp3');
+	*/
+}
+function p10_init() {
+	is3010tracked = isCurrentPageTracked(10, true, "Please complete all required activities on this page");
+	if (is3010tracked) {
+		completeForm3010();
+	} else {
+		setupForm3010();
+	}
+}
+function p10_out() {}
+</script>
+<div class="pagecontent">
+	<div id="s3010" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">Step 2: Prepare for the Sales Call</div>
+		</div>
+		<div class="slidecontent">
+			<div class="slidequestion">Select the best answer based on the customer information.</div>
+			<div class="optionsarea orangeboximg">
+				<div class="textarea1"></div>
+				<div id="formarea3010" class="formarea1">
+					<img id="s3010_formEnd" src="mod3/assets/imgs/form3010end.png" alt="formEnd"/>
+				</div>
+			</div>
+			<div id="slideresults_s3010"></div>
+		</div>
+		<img class="stepIcon" src="mod3/assets/imgs/iconStep_02.png" alt="Step 2 Icon"/>
+	</div>
+</div>

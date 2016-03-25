@@ -1,0 +1,133 @@
+<style>
+/*
+#s3022 .slidecontent {
+	position: relative;
+	padding-top: 10px;
+}
+#s3022 img.stepIcon {
+	position: absolute;
+	width:60px;
+	height:60px;
+	top: 52px;
+	right: 30px;
+}
+#s3022 .sliderow {
+	width: 100%;
+	height: 450px;
+}
+#s3022 .slideTxtBox {
+	position: relative;
+	display: inline-block;
+	width: 400px;
+	height: 450px;
+	vertical-align:middle;
+}
+#s3022 .slideImgBox {
+	position: relative;
+	display: inline-block;
+	width: 500px;
+	height: 450px;
+	vertical-align:top;
+}
+*/
+#s3022 .slideheader {
+	margin-bottom: 0;
+}
+#s3022 .sliderow {
+	top:15px;
+	width: 100%;
+	height: 450px;
+}
+#s3022 .txtArea{
+	position: relative;
+	display: inline-block;
+	width: 450px;
+	height: 450px;
+	/*vertical-align:middle;*/
+}
+#s3022 .imgArea{
+	position: relative;
+	display: inline-block;
+	width: 550px;
+	height: 450px;
+	vertical-align:top;
+}
+#s3022 .txtArea .txtBox{
+	position:absolute;
+	width: 380px;
+	height: 350px;
+	left: 80px;
+	top:0;
+	display: table;
+}
+#s3022 .txtArea .txtBox .slideTxt {
+	display: table-cell;
+	vertical-align: middle;
+}
+img#img3022a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 5;
+}
+img#img3022b {
+	position: absolute;
+	top: 180px;
+	left: 200px;
+	z-index: 10;
+}
+#txt3022a {
+	position: absolute;
+	left: 60px;
+	top:200px;
+	width: 280px;
+	font-size: 14pt;
+	line-height: 14pt;
+}
+#s3022 img.stepIcon {
+	position: absolute;
+	width:60px;
+	height:60px;
+	top: 4px;
+	right: 20px;
+}
+</style>
+<script type="text/javascript">
+var tl3022, txt3022a, txt3022b, img3022a, img3022b;
+$(document).ready(function () {
+	stdPageInit("s3022");
+	txt3022a = '#txt3022a';
+	txt3022b = '#txt3022b';
+	tl3022 = new TimelineMax({paused:false});
+	tl3022.add(TweenMax.to(txt3022a, 0, {opacity:0}),0);
+	tl3022.add(TweenMax.to("#img3022a", 0, {opacity:0}),0);
+	tl3022.add(TweenMax.to("#img3022b", 0, {opacity:0}),0);
+	tl3022.addPause();
+	tl3022.add(TweenMax.to("#img3022a", 2, {opacity:1}),1);
+	tl3022.add(TweenMax.to("#img3022b", 2, {opacity:1}),2);
+	tl3022.add(TweenMax.to(txt3022a, 2, {opacity:1}),5);
+});
+function p16_init() {stdAudioInit('mod3/assets/audio/FordCBS_3022.mp3',tl3022);}
+function p16_out() {tl3022.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s3022" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">Step 3: Present the Proposal<br/>Customer Sales Presentation Template</div>
+		</div>
+		<div class="slidecontent">
+			<div class="sliderow orangevertline">
+				<div class="txtArea">
+					<div class="txtBox">
+						<div class="slideTxt"><div id="txt3022a">Customized with Dealership name and Additional Services</div></div>
+					</div>
+				</div>
+				<div class="imgArea">
+					<img id="img3022a" src="mod3/assets/imgs/3022a.png" alt="photo 3022a"/>
+					<img id="img3022b" src="mod3/assets/imgs/3022b.png" alt="photo 3022b"/>
+				</div>
+			</div>
+			<img class="stepIcon" src="mod3/assets/imgs/iconStep_03.png" alt="Step 3 Icon"/>
+		</div>
+	</div>
+</div>

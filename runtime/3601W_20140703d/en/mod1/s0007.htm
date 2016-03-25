@@ -1,0 +1,48 @@
+<style>
+#s0007 .slidecontent {
+	height: 400px;
+}
+#s0007 .sliderow {
+	top: 20px;
+	height: 330px;
+}
+</style>
+<script type="text/javascript">
+var bulletli;
+var tl007;
+$(document).ready(function() {
+	stdPageInit("s0007");
+	bulletli = $(".arrowbullet");
+	//TweenMax.to(bulletli, 0, {opacity:0});
+	tl007 = new TimelineMax({paused: false});
+	tl007.add(TweenMax.to(bulletli, 0, {opacity: 0}));
+	tl007.addPause();
+	tl007.add(TweenMax.to("#s0007_b1", 1, {opacity: 1}), 4);
+	tl007.add(TweenMax.to("#s0007_b2", 1, {opacity: 1}), 10);
+	tl007.add(TweenMax.to("#s0007_b3", 1, {opacity: 1}), 18);
+	tl007.add(TweenMax.to("#s0007_b4", 1, {opacity: 1}), 24);
+	tl007.add(TweenMax.to("#s0007_b5", 1, {opacity: 1}), 29);
+});
+function p7_init() {stdAudioInit('mod1/assets/audio/FordCBS_0007.mp3', tl007);}
+function p7_out() {tl007.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s0007" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">Course Objectives</div>
+		</div>
+		<div class="slidecontent">
+			<div class="sliderow orangeboximg">
+				<div class="slidebullets">
+					<ul class="arrowlist">
+						<li id="s0007_b1" class="arrowbullet">Recognize the value of a holistic selling approach</li>
+						<li id="s0007_b2" class="arrowbullet">Explain the opportunity of Ford Commercial Business Solutions for increasing dealership commercial business and profitability</li>
+						<li id="s0007_b3" class="arrowbullet">Identify customer needs and wants for commercial vehicle services</li>
+						<li id="s0007_b4" class="arrowbullet">Demonstrate the benefits and value of Ford Commercial Business Solutions over the competition</li>
+						<li id="s0007_b5" class="arrowbullet">Develop customized presentations within a consultative sales process to sell Ford Commercial Business Solutions</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

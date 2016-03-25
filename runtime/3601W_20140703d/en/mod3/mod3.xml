@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<sco>
+	<course id="c3" title="Module 3: Selling Ford Commercial Business Solutions" lang="en-usa">
+		<topic id="c3t1" title="Module 3: Selling Ford Commercial Business Solutions">
+			<page id="c3t1p1" label="Introduction to Selling Ford Commercial Business Solutions" url="mod3/s3000.htm"/>
+			<page id="c3t1p2" label="The Sales Approach" url="mod3/s3001.htm"/>
+			<page id="c3t1p3" label="Step 1: Qualifying the Customer" url="mod3/s3002.htm"/>
+			<page id="c3t1p4" label="Step 1: Qualifying the Customer Customer Interview Form" url="mod3/s3003.htm"/>
+			<page id="c3t1p5" label="Step 1: Qualifying the Customer Customer Interview Form Completed" url="mod3/s3004.htm"/>
+			<page id="c3t1p6" label="Step 1: Qualifying the Customer Cost-per-Mile Value Builder" url="mod3/s3005.htm"/>
+			<page id="c3t1p7" label="The Sales Approach" url="mod3/s3006.htm"/>
+			<page id="c3t1p8" label="Step 2: Prepare for the Sales Call" url="mod3/s3007.htm"/>
+			<page id="c3t1p9" label="Step 2: Prepare for the Sales Call: Commercial Cost-Per-Mile Value Builder Quick Quote Tool" url="mod3/s3009.htm"/>
+			<page id="c3t1p10" label="Step 2: Prepare for the Sales Call Commercial Cost-Per-Mile Value Builder Quick Quote Tool" url="mod3/s3010.htm"/>
+			<page id="c3t1p11" label="Step 2: Prepare for the Sales Call Premium Maintenance Plan Savings" url="mod3/s3017.htm"/>
+			<page id="c3t1p12" label="Step 2: Prepare for the Sales Call CommerciaLease Quick Quote" url="mod3/s3018.htm"/>
+			<page id="c3t1p13" label="The Sales Approach" url="mod3/s3019.htm"/>
+			<page id="c3t1p14" label="Step 3: Present the Proposal Customer Sales Presentation Template" url="mod3/s3020.htm"/>
+			<page id="c3t1p15" label="Step 3: Present the Proposal Customer Sales Presentation Template" url="mod3/s3021.htm"/>
+			<page id="c3t1p16" label="Step 3: Present the Proposal Customer Sales Presentation Template Customized" url="mod3/s3022.htm"/>
+			<page id="c3t1p17" label="Step 3: Present the Proposal Ford Credit Financing Completes the Solution" url="mod3/s3023.htm"/>
+			<page id="c3t1p18" label="Step 3: Present the Proposal Presentation Materials" url="mod3/s3024.htm"/>
+			<page id="c3t1p19" label="Step 3: Present the Proposal" url="mod3/s3025.htm"/>
+			<page id="c3t1p20" label="The Sales Approach" url="mod3/s3026.htm"/>
+			<page id="c3t1p21" label="Step 4 and Step 5" url="mod3/s3027.htm"/>
+		</topic>
+	</course>
+</sco>

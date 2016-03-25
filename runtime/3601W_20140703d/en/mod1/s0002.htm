@@ -1,0 +1,76 @@
+<style>
+#s0002 .slidecontent {
+	position: relative;
+	padding-top: 10px;
+	padding-bottom: 40px;
+}
+#s0002 .sliderow {
+	position: relative;
+	margin-top: 10px;
+	padding-top: 10px;
+	width: 100%;
+	height: 320px;
+}
+#s0002 img.rightSideImg {
+	position: absolute;
+	width: 322px;
+	height: 400px;
+	top: 70px;
+	right: 100px;
+}
+#s0002 .menuImgArea {
+	position: relative;
+	width: 400px;
+	height: 100%;
+	margin-top: 60px;
+	margin-left: 100px;
+}
+#s0002 .menuImg {
+	position: absolute;
+}
+#s0002 .slidetxt {
+	position: absolute;
+	top: 100px;
+	font-size: 20pt;
+}
+</style>
+<script type="text/javascript">
+var tl0002;
+$(document).ready(function() {
+	stdPageInit("s0002");
+	var txt0002 = $("#s0002").find(".slidetxt");
+	var img0002menu01 = $("#s0002menu_01");
+	var img0002menu02 = $("#s0002menu_02");
+	var img0002 = $("#s0002").find(".rightSideImg");
+	tl0002 = new TimelineMax({paused: false});
+	tl0002.add(TweenMax.to(txt0002, 0, {opacity: 0}));
+	tl0002.add(TweenMax.to(img0002menu01, 0, {opacity: 0}));
+	tl0002.add(TweenMax.to(img0002menu02, 0, {opacity: 0}), 0);
+	tl0002.add(TweenMax.to(img0002, 0, {opacity: 0}), 0);
+	tl0002.addPause();
+	tl0002.add(TweenMax.to(img0002menu01, 2, {opacity: 1}), 2);
+	tl0002.add(TweenMax.to(img0002menu02, 1, {opacity: 1}), 9);
+	tl0002.add(TweenMax.to(txt0002, 2, {opacity: 1}), 10);
+	tl0002.add(TweenMax.to(img0002, 2, {opacity: 1}), 11);
+});
+function p2_init() {stdAudioInit('mod1/assets/audio/FordCBS_0002.mp3', tl0002);}
+function p2_out() {tl0002.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s0002" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">Ford Commercial Business Solutions</div>
+		</div>
+		<div class="slidecontent">
+			<div class="sliderow orangeboximg">
+				<div class="menuImgArea">
+					<img id="s0002menu_01" class="menuImg" src="mod1/assets/imgs/s0002menu_01.png" alt="menu"/>
+					<img id="s0002menu_02" class="menuImg" src="mod1/assets/imgs/s0002menu_02.png" alt="menu"/>
+
+					<div class="slidetxt">Download the Job Aid</div>
+				</div>
+			</div>
+		</div>
+		<img class="rightSideImg" src="mod1/assets/imgs/s0002_jobaidcover.png" alt="Job Aid Cover"/>
+	</div>
+</div>

@@ -1,0 +1,235 @@
+<!--CSS-->
+<style>
+/*
+strong { font-weight: bold; }
+em { font-style: italic; }
+ul { list-style-type: circle; }
+ol { list-style-type: decimal; }
+ol li { list-style-type: decimal; margin-left: 20px; }
+a, a:link, a:visited {
+	color:#ffffff;
+	text-decoration: none;
+}
+*/
+#s2008 .slideoptions button {
+	position:absolute;
+	right: 100px;
+	bottom: 10px;
+	width: auto;
+	padding: 5px 15px;
+	color:#ffffff;
+	background-color:#f15d22;
+	border: 1px solid #fff;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	text-decoration: none;
+}
+#s2008 .slideoptions button:disabled {
+	background-color:darkslategray;
+}
+#s2008 .slideoptions button:hover {
+	background-color:darkslategray;
+}
+#s2008 .slideoptions {
+	padding: 8px 35px;
+}
+/* Specific checkbox widget styles */
+#s2008	.ui-checkbox {
+	font-size: 0.75em;
+	margin: 0.6em;
+}
+#s2008 .slidequestion {
+	margin-left: 35px;
+	margin-right: 35px;
+	padding-top:0;
+	padding-bottom: 10px;
+	color: #425968;
+	font-size: 14pt;
+	line-height: 14pt;
+	text-align:left;
+}
+#s2008 .slideresult {
+	padding: 6px 40px;
+}
+#s2008 .slideresult p{
+	font-size: 12pt;
+	line-height: 12pt;
+	text-align:left;
+	color: #000000;
+}
+#s2008 .optionarea {
+	margin:0;
+}
+#s2008 .qoption {
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	width: 950px;
+	height: 32px;
+}
+#s2008 .qoption label{
+	margin-left: 10px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	/*border: 1px solid #000000;*/
+	font-size: 16pt;
+	line-height: 16pt;
+	display:inline-block;
+}
+/*
+.optionInput {
+	display:inline-block;
+	top: 3px;
+	width: 24px;
+	height: 24px;
+}
+*/
+#s2008 .optionIcon {
+	float: left;
+	width:30px;
+	height:30px;
+	/*border: 1px solid #000000;*/
+	background:url('images/shell/mc_checksprite.png') no-repeat;
+	margin-right: 10px;
+}
+#s2008 .optionCorrect{
+	background-position: 0 -30px;
+}
+.ui-helper-hidden-accessible {
+	display:none;
+}
+</style>
+<script type="text/javascript">
+var q1;
+var answers = [];
+var quizJSON;
+var submitbtnquiz;
+var s2008;
+var s2008_slideOptions;
+$(document).ready(function () {
+	stdPageInit("s2008");
+	//console.log("Document Ready Page2" + WBTApp.pageNum);
+	s2008 = ("#s2008");
+	quizJSON = {
+		// Question 3 - Multiple Choice, Multiple True Answers, Select All
+		"q": "Which of the following are features of Ford Commercial Business Solutions, but MAY NOT be offered by competitive fleet service management companies or they MAY CHARGE extra for them? <br/><b>Select all that apply.</b>",
+		"a": [
+			{"option": "Covers failure of covered components due to wear and tear", "id":"o1","correct": true},
+			{"option": "Commercial lease option",                                           "id":"o2","correct": false},
+			{"option": "Driver profile reporting",                                  "id":"o3","correct": false},
+			{"option": "Website access/online billing & reports",                   "id":"o4","correct": true},
+			{"option": "Repairs performed by factory-trained technicians using OE parts",          "id":"o5","correct": true},
+			{"option": "Exception reports",                                         "id":"o6","correct": false},
+			{"option": "Spending controls",                                         "id":"o7","correct": true},
+			{"option": "Cost containment",                                          "id":"o8","correct": true} // no comma here
+		],
+		"correct": "<p>Good work! Those are all features of Ford Commercial Business Solutions that  competitors may not offer  or may charge extra for them. Click “Next” to continue. </p>",
+		"incorrect": "<p>That is incorrect. The checked items indicate features of Ford Commercial Business Solutions that competitors may not offer or may charge extra for them. Your Job Aid contains a complete competitive comparison chart that details how Ford Commercial Business Solutions provides valuable attributes versus competitors. You can also find the chart at the ESP tab on FMCDealer.com.  Click “Next” to continue. </p>" // no comma here
+	}; // no comma here
+	var ansobjs = quizJSON.a;
+	var qtxt = quizJSON.q;
+	$(s2008).find(".slidequestion").append(qtxt);
+	s2008_slideOptions =	$(s2008).find(".slideoptions");
+	//$(".slidequestion").append(qtxt);
+	$.each(ansobjs, function () {
+		answers.push({id : this.id, correct: this.correct});
+		var qdiv = $("<div>"), optionIcon =$("<div>").addClass('optionIcon'),  inputel =  $("<input>").attr('type', 'checkbox').val(this.id).attr('id',this.id).addClass('optionInput'), labelel = $("<label>").text(this.option).attr('for',this.id);
+		var newq =	qdiv.append(optionIcon,inputel,labelel).addClass("qoption");
+		$(s2008_slideOptions).append(newq);
+	});
+	submitbtnquiz = $("<button/>").addClass('checkAnswerClass').text("SUBMIT").prop("disabled",true);
+	submitbtnquiz.on('click', function(e) {
+		e.preventDefault();
+		checkAnswer();
+	});
+	$(s2008_slideOptions).append(submitbtnquiz);
+	$(s2008_slideOptions).find("input").on("change", activateSubmit);
+	//$("input").on("change", activateSubmit);
+});
+function activateSubmit() {
+	//console.log("activate submit");
+	//sldoptions = $("s2008").find(".slideoptions");
+	var anyanswers= $(s2008_slideOptions).find('input:checked');
+	if (anyanswers.length > 0){
+		$(submitbtnquiz).prop("disabled",false);
+	} else {
+		$(submitbtnquiz).prop("disabled",true);
+	}
+}
+function checkAnswer() {
+	var resulttxt;
+	//sldoptions = $("#s2008").find(".slideoptions");
+	var answerInputs	= $(s2008_slideOptions).find('input:checked');
+	var slideresultsarea =$("#s2008").find(".slideresult");
+	if(answerInputs.length > 0) {
+		// Collect the true answers needed for a correct response
+		var trueAnswers = [];
+		for (var i in answers) {
+			if (answers.hasOwnProperty(i)) {
+				var answer = answers[i];
+				var divid = '#'+answer.id;
+				$(divid).prop('disabled',true);
+				if (answer.correct) {
+					trueAnswers.push(answer.id);
+					$(divid).parent(".qoption").find(".optionIcon").addClass('optionCorrect');
+				}
+			}
+		}
+		$(submitbtnquiz).prop("disabled",true);
+		// NOTE: Collecting answer index for comparison aims to ensure that HTML entities
+		// and HTML elements that may be modified by the browser / other scrips match up
+		// Collect the answers submitted
+		var selectedAnswers = [];
+		answerInputs.each(function() {
+			var id = $(this).attr('id');
+			selectedAnswers.push(id);
+		});
+		var correctResponse = compareAnswers(trueAnswers, selectedAnswers);
+		if (correctResponse) {
+			resulttxt = quizJSON.correct;
+			AudioPlayer.resetAudio('mod2/assets/audio/FordCBS_2008_CORRECT.mp3');
+		} else {
+			resulttxt = quizJSON.incorrect;
+			AudioPlayer.resetAudio('mod2/assets/audio/FordCBS_2008_INCORRECT.mp3');
+		}
+		$(slideresultsarea).html(resulttxt);
+		// when complete, reset impediment to allow page transitions
+		WBTApp.setImpedimentComplete();
+	} else {
+	}
+}
+// Compares selected responses with true answers, returns true if they match exactly
+function compareAnswers(trueAnswers, selectedAnswers) {
+	// crafty array comparison (http://stackoverflow.com/a/7726509)
+	return ($(trueAnswers).not(selectedAnswers).length === 0 && $(selectedAnswers).not(trueAnswers).length === 0);
+}
+function p10_init() {
+	isCurrentPageTracked(10, true, "Please complete all required activities on this page")
+	stdAudioInit('mod2/assets/audio/FordCBS_2008.mp3');
+}
+function p10_out() {
+	$("#s2008").find(".slideresult").empty();
+	$("input[type=checkbox]").each(function() {
+		this.checked = false;
+		this.disabled = false;
+	});
+	$('.optionIcon').removeClass('optionCorrect');
+}
+</script>
+<div class="pagecontent">
+	<div id="s2008" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">Knowledge Check <br/> ESP/QFC Competitive Comparison</div>
+		</div>
+		<div class="slidecontent">
+			<div class="slidequestion"></div>
+			<div class="optionsarea orangeboximg">
+				<div class="slideoptions">
+				</div>
+			</div>
+			<div class="slideresult"></div>
+		</div>
+	</div>
+</div>

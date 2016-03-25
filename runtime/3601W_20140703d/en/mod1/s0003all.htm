@@ -1,0 +1,200 @@
+<style>
+#s0003all .slidecontent {
+	margin-top: 10px;
+	padding-bottom: 20px;
+	height: 370px;
+}
+#s0003all .dialogAreaCenter, .dialogAreaLeft, .dialogAreaRight {
+	height: 370px;
+}
+#s0003all .dialogAreaCenter {
+	width: 510px;
+	float: left;
+}
+#s0003all .dialogAreaLeft {
+	/*width: calc(50% - 255px);*/
+	width: 255px;
+	float: left;
+}
+#s0003all .dialogAreaRight {
+	width: 255px;
+	/*width: calc(50% - 255px);*/
+	float: right;
+}
+#s0003all img.dialogPhoto {
+	position: absolute;
+}
+#s0003all .arrowBubbleRight {
+	background: url('mod1/assets/imgs/arrowBubbleRight.png') no-repeat;
+	padding-left: 30px;
+	width: 160px;
+	height: 200px;
+	position: absolute;
+}
+#s0003all .arrowBubbleLeft {
+	background: url('mod1/assets/imgs/arrowBubbleLeft.png') no-repeat;
+	padding-left: 20px;
+	width: 180px;
+	height: 200px;
+	position: absolute;
+}
+#s0003all .arrowBubbleLeft_lg {
+	background: url('mod1/assets/imgs/arrowBubbleLeft_lg.png') no-repeat;
+	padding-left: 20px;
+	width: 180px;
+	height: 240px;
+	position: absolute;
+}
+#s0003all .bubbleText {
+	font-size: 12pt;
+	color: #ffffff;
+	width: 145px;
+	height: 200px;
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+}
+#s0003all .bubbleText_lg {
+	font-size: 12pt;
+	color: #ffffff;
+	width: 145px;
+	height: 240px;
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+}
+#bubble0003a1 {
+	top: 20px;
+	left: 80px;
+}
+#bubble0003a2 {
+	top: 60px;
+	right: 80px;
+}
+#bubble0003b1 {
+	top: 20px;
+	left: 80px;
+}
+#bubble0003b2 {
+	top: 60px;
+	right: 80px;
+}
+#bubble0003c1 {
+	top: 20px;
+	left: 80px;
+}
+#bubble0003c2 {
+	top: 60px;
+	right: 80px;
+}
+.photocaption {
+	position: absolute;
+	width: 100%;
+	font-size: 12pt;
+	font-weight: bold;
+	bottom: 10px;
+	color: #425968;
+}
+.captionleft {
+	text-align: right;
+}
+.captionright {
+	text-align: left;
+}
+</style>
+<script type="text/javascript">
+var tl0003all, capleft0003all, capright0003all, photos0003all, bubblesLeft0003all,
+	bubblesLeft_lg0003all, bubblesRight0003all, bubblesTxt0003all, bubblesTxt0003all_lg;
+$(document).ready(function() {
+	stdPageInit("s0003all");
+	//set up slide
+	bubblesTxt0003all = $("#s0003all").find(".bubbleText");
+	bubblesTxt0003all_lg = $("#s0003all").find(".bubbleText_lg");
+	capleft0003all = $("#s0003all").find(".captionleft");
+	capright0003all = $("#s0003all").find(".captionright");
+	photos0003all = $("#s0003all").find(".dialogPhoto");
+	bubblesLeft0003all = $("#s0003all").find(".arrowBubbleLeft");
+	bubblesLeft_lg0003all = $("#s0003all").find(".arrowBubbleLeft_lg");
+	bubblesRight0003all = $("#s0003all").find(".arrowBubbleRight");
+	tl0003all = new TimelineMax();
+	tl0003all.add(TweenMax.to(bubblesTxt0003all, 0, {opacity: 0}));
+	tl0003all.add(TweenMax.to(bubblesTxt0003all_lg, 0, {opacity: 0}));
+	tl0003all.add(TweenMax.to(capleft0003all, 0, {opacity: 0}));
+	tl0003all.add(TweenMax.to(capright0003all, 0, {opacity: 0}));
+	tl0003all.add(TweenMax.to(capright0003all, 0, {opacity: 0}));
+	tl0003all.add(TweenMax.to(photos0003all, 0, {opacity: 0}));
+	tl0003all.add(TweenMax.to(bubblesLeft0003all, 0, {opacity: 0}));
+	tl0003all.add(TweenMax.to(bubblesLeft_lg0003all, 0, {opacity: 0}));
+	tl0003all.add(TweenMax.to(bubblesRight0003all, 0, {opacity: 0}));
+	tl0003all.addPause();
+	tl0003all.add(TweenMax.to("#img0003a", 1, {opacity: 1}), 0.5);
+	tl0003all.add(TweenMax.to(capleft0003all, 0.5, {opacity: 1}), 1);
+	tl0003all.add(TweenMax.to(capright0003all, 0.5, {opacity: 1}), 1);
+	tl0003all.add(TweenMax.to("#bubble0003a1", 1, {opacity: 1}), 4.5);
+	tl0003all.add(TweenMax.to("#bubble0003a1_txt", 1, {opacity: 1}), 5.0);
+	tl0003all.add(TweenMax.to("#bubble0003a2", 1, {opacity: 1}), 14.5);
+	tl0003all.add(TweenMax.to("#bubble0003a2_txt", 1, {opacity: 1}), 15.0);
+	tl0003all.add(TweenMax.to("#bubble0003a1", 0.5, {opacity: 0}), 19.5);
+	tl0003all.add(TweenMax.to("#bubble0003a1_txt", 0.5, {opacity: 0}), 19.5);
+	tl0003all.add(TweenMax.to("#bubble0003a2", 0.5, {opacity: 0}), 19.5);
+	tl0003all.add(TweenMax.to("#bubble0003a2_txt", 0.5, {opacity: 0}), 19.5);
+	tl0003all.add(TweenMax.to("#img0003a", 1, {opacity: 0}), 20);
+	tl0003all.add(TweenMax.to("#img0003b", 1, {opacity: 1}), 20);
+	tl0003all.add(TweenMax.to("#bubble0003b1", 1, {opacity: 1}), 22);
+	tl0003all.add(TweenMax.to("#bubble0003b1_txt", 1, {opacity: 1}), 22.5);
+	tl0003all.add(TweenMax.to("#bubble0003b2", 1, {opacity: 1}), 27);
+	tl0003all.add(TweenMax.to("#bubble0003b2_txt", 1, {opacity: 1}), 27.5);
+	tl0003all.add(TweenMax.to("#bubble0003b1", 0.5, {opacity: 0}), 30);
+	tl0003all.add(TweenMax.to("#bubble0003b1_txt", 0.5, {opacity: 0}), 30);
+	tl0003all.add(TweenMax.to("#bubble0003b2", 0.5, {opacity: 0}), 30);
+	tl0003all.add(TweenMax.to("#bubble0003b2_txt", 0.5, {opacity: 0}), 30);
+	tl0003all.add(TweenMax.to("#img0003b", 1, {opacity: 0}), 31);
+	tl0003all.add(TweenMax.to("#img0003c", 1, {opacity: 1}), 31);
+	tl0003all.add(TweenMax.to("#bubble0003c1", 1, {opacity: 1}), 32);
+	tl0003all.add(TweenMax.to("#bubble0003c1_txt", 1, {opacity: 1}), 32.5);
+	tl0003all.add(TweenMax.to("#bubble0003c2", 1, {opacity: 1}), 44);
+	tl0003all.add(TweenMax.to("#bubble0003c2_txt", 1, {opacity: 1}), 44.5);
+});
+
+function p3_init() {stdAudioInit('mod1/assets/audio/FordCBS_0003all.mp3', tl0003all);}
+function p3_out() {tl0003all.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s0003all" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">Are You Losing Commercial Business
+				<br/>to Competitors Like This?</div>
+		</div>
+		<div class="slidecontent">
+			<div class="dialogAreaLeft">
+				<p class="photocaption captionleft">Fleet Management Company Representative</p>
+			</div>
+			<div class="dialogAreaCenter">
+				<img id="img0003a" class="dialogPhoto img_ie" src="mod1/assets/imgs/s0003a.png" alt="img0003a"/>
+				<img id="img0003b" class="dialogPhoto img_ie" src="mod1/assets/imgs/s0003b.png" alt="img0003b"/>
+				<img id="img0003c" class="dialogPhoto img_ie" src="mod1/assets/imgs/s0003c.png" alt="img0003c"/>
+			</div>
+			<div class="dialogAreaRight">
+				<p class="photocaption captionright">Commercial Customer</p>
+			</div>
+			<div id="bubble0003a1" class="arrowBubbleLeft">
+				<div id="bubble0003a1_txt" class="bubbleText">So Ted, while we’re talking about the vehicles you want to order to keep your business expanding, I’d also like to talk about how we can help you manage your expenses throughout the entire ownership cycle.</div>
+			</div>
+			<div id="bubble0003a2" class="arrowBubbleRight">
+				<div id="bubble0003a2_txt" class="bubbleText">Well, I do manage my own vehicle expenses, but I’m not sure what you can do for me.</div>
+			</div>
+			<div id="bubble0003b1" class="arrowBubbleLeft">
+				<div id="bubble0003b1_txt" class="bubbleText">We offer a way you can do that more efficiently and more conveniently … and on top of that, save money.</div>
+			</div>
+			<div id="bubble0003b2" class="arrowBubbleRight">
+				<div id="bubble0003b2_txt" class="bubbleText">Now, you’ve got my attention. What have you got?</div>
+			</div>
+			<div id="bubble0003c1" class="arrowBubbleLeft_lg">
+				<div id="bubble0003c1_txt"  class="bubbleText_lg">Our fleet management plan offers you a full maintenance program with a fixed cost for all routine maintenance and repairs. We’ve got hundreds of service locations across the country. We offer monthly reporting and billing… and a whole lot more.</div>
+			</div>
+			<div id="bubble0003c2" class="arrowBubbleRight">
+				<div id="bubble0003c2_txt"  class="bubbleText">That sounds like something I would be interested in – especially if it saves me time and money. Tell me more.</div>
+			</div>
+		</div>
+	</div>
+</div>

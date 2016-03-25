@@ -1,0 +1,198 @@
+<style>
+#s3004 .slideheader {
+	margin-bottom: 0;
+}
+#s3004 img.stepIcon {
+	position: absolute;
+	width:60px;
+	height:60px;
+	top: 4px;
+	right: 20px;
+}
+#s3004 .directionTxt {
+	font-size: 12pt;
+	font-style: italic;
+	color: #425968;
+	position:absolute;
+	width: 300px;
+	top: 0;
+	left: 60px;
+}
+#s3004	.sliderow {
+	width: 100%;
+	top:20px;
+	height: 450px;
+}
+#imgClickImg3004{
+	position:absolute;
+	width: 298px;
+	height: 400px;
+	top: 35px;
+	left: 60px;
+	background: url("mod3/assets/imgs/s3004_clickImgBack.png") no-repeat;
+}
+#s3004 .txtArea {
+	position:relative;
+	width: 500px;
+	height: 100%;
+	left: 500px;
+	top:0;
+}
+#s3004 .imgClickTxt {
+	position:absolute;
+	width: 460px;
+	height: 350px;
+	right: 60px;
+	top:40px;
+	display: table;
+}
+#s3004 .imgClickTxt .txtBullets {
+	font-size: 18pt;
+	line-height: 18pt;
+	display: table-cell;
+	vertical-align: middle;
+}
+/*
+#s3004 .directionTxt {
+	position:absolute;
+	width: 300px;
+	height: 20px;
+	top: 0;
+	left: 60px;
+}
+#s3004 .imgClickTxt {
+	font-size: 18pt;
+	line-height:18pt;
+	position: relative;
+	padding: 10px;
+	left: 420px;
+	top: 15%;
+	width: 450px;
+}
+*/
+#s3004 .btnImgOver {
+	background:#ffff99;
+	border:2px solid #f6f60b;
+}
+#s3004 .addborder {
+	border: 10px solid #ff0000;
+}
+#s3004	.imgClickDone {
+	border: 1px solid #ff0000;
+	background: url("images/shell/imgClickCheck14.png") no-repeat top right;
+}
+</style>
+<script type="text/javascript">
+ var slideid = "s3004";
+var s3004_totalFormParts = [];
+var s3004_totalFormPartsClicked;
+function btn_mouseOver(evt) {
+	$(this).css("cursor","pointer");
+	$(this).css("opacity","0.5");
+}
+function btn_mouseOut(evt) {
+	 $(this).css("opacity","0.2");
+}
+function btn_mouseClick(evt) {
+	var thisel = $(this);
+	thisel.css({
+		border:'1px solid #ff0000', background: 'url("mod3/assets/imgs/clickImgCheck15.png") no-repeat top right',opacity:'1'});
+}
+$(document).ready(function() {
+	stdPageInit("s3004");
+	$.getJSON('mod3/assets/data/s3004.json', function(data) {
+		//console.log(data);
+		$.each(data[slideid], function(i, item) {
+			var newbtn = $("<button></button>");
+			$(newbtn).attr({id: item.id})
+				.data("btndata",{ imgurl: item.img, audiourl: item.audio, imgw: item.imgw, imgh:item.imgh}).addClass('btnImgOver')
+				.css({
+					"position":'absolute',
+					"background":'#ffff99',
+					"border":'2px solid #f6f60b',
+					"display":'block',
+					"width": item.width + 'px',
+					"height": item.height + 'px',
+					"top": item.ypos + 'px',
+					"left": item.xpos + 'px'
+				});
+			s3004_totalFormParts.push(item.id);
+			$(newbtn).appendTo("#imgClickImg3004");
+		});
+		$("#s3004").find(".btnImgOver")
+			.button({icons: {primary: "ui-icon-gear", secondary:"ui-icon-check"}, text : false})
+			.css({opacity: 0.2})
+			.on("mouseover", btn_mouseOver)
+			.on("mouseout", btn_mouseOut)
+			.one('click', btn_mouseClick);
+		$('#imgClickImg3004').find('button').each(function(){
+			var thisis = $(this);
+			var thisimgdata = thisis.data("btndata").imgurl;
+			var thisid = thisis.attr("id");
+			var imgw = thisis.data("btndata").imgw;
+			var imgh = thisis.data("btndata").imgh;
+			//console.log('imgw='+imgw + 'imgh='+imgh);
+			var thisdescription = '<img id="img'+thisid+'" class="clickImgLg" src="'+thisimgdata+'" alt="alt text"/>';
+			thisis.on("playaudio",  function(event) {
+				var audiourl = thisis.data("btndata").audiourl;
+				s3004_checkIfAllClicked(thisid);
+				AudioPlayer.resetAudio(audiourl);
+			});
+			$(this).paulund_modal_box({
+				title:'',
+				width: parseInt(imgw),
+				height: parseInt(imgh),
+				description:thisdescription
+			});
+		});
+	});
+});
+function s3004_checkIfAllClicked(itemid) {
+	var itemInt = -1;
+	for (var i = 0; i <= s3004_totalFormParts.length; i++) {
+		if (s3004_totalFormParts[i] == itemid) {
+			itemInt = i;
+		}
+	}
+	if (itemInt >= 0) {
+		s3004_totalFormParts.splice(itemInt, 1);
+		s3004_checkClickArray();
+	}
+}
+function s3004_checkClickArray(){
+	if (s3004_totalFormParts.length > 0) {
+	} else {
+		WBTApp.setImpedimentComplete();
+	}
+}
+function p5_init() {
+	isCurrentPageTracked(5, true, "Please complete all required activities on this page")
+	stdAudioInit('mod3/assets/audio/FordCBS_3004.mp3');
+}
+function p5_out() {}
+</script>
+<div class="pagecontent">
+	<div id="s3004" class="slideholder">
+		<div class="slideheader"><div class="slideheadertext">Step 1: Qualifying the Customer <br/>Customer Interview Form</div></div>
+		<div class="slidecontent">
+			<div class="sliderow orangevertline">
+				<div class="directionTxt">Click on each highlighted area for more information on the tool.</div>
+				<div id="imgClickImg3004">
+				</div>
+				<div class="txtArea">
+					<div class="imgClickTxt">
+						<div class="txtBullets"><b>Your Commercial Customer:</b>
+							<ul>
+								<li>Fleet Manager of ABC Plumbing & Heating</li>
+								<li>Employs 20 plumbers and HVAC technicians and 5 salespeople</li>
+								<li>Fleet of 23 upfitted trucks and 6 leased cars</li>
+								<li>3 of the leased cars are near lease-end</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<img class="stepIcon" src="mod3/assets/imgs/iconStep_01.png" alt="Qualify the Customer"/>
+		</div>
+	</div>
+</div>

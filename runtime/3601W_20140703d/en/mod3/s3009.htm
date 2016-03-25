@@ -1,0 +1,73 @@
+<style>
+#s3009 .slidecontent{
+	position: relative;
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+#s3009 .sliderow {
+	margin-top: 10px;
+	padding-top: 10px;
+	width: 100%;
+	height: 320px;
+	/*
+	margin-bottom: 40px;
+	padding-bottom: 10px;
+	margin-left: 35px;
+	margin-right: 35px;
+	border: 1px solid black;
+	text-align:justify;
+	*/
+}
+#s3009 .slidetxt{
+	font-size: 20pt;
+	line-height: 20pt;
+	margin: 30px 500px 20px 60px;
+	padding: 10px;
+}
+#s3009 img.stepIcon {
+	position: absolute;
+	width:60px;
+	height:60px;
+	top: 52px;
+	right: 30px;
+}
+#s3009 img.rightSideImg {
+	position: absolute;
+	width:322px;
+	height:400px;
+	top: 80px;
+	right: 100px;
+}
+</style>
+<script type="text/javascript">
+var tl3009;
+var txt3009;
+var img3009;
+$(document).ready(function () {
+	stdPageInit("s3009");
+	txt3009 = $("#s3009").find(".slidetxt");
+	img3009 = $("#s3009").find(".rightSideImg");
+	tl3009 = new TimelineMax({paused:false});
+	tl3009.add(TweenMax.to(img3009, 0, {opacity:0, x:"+=100px"}));
+	tl3009.add(TweenMax.to(txt3009, 0, {opacity:0}),0);
+	tl3009.addPause();
+	tl3009.add(TweenMax.to(img3009, 2, {opacity:1, x:"-=100px"}),2);
+	tl3009.add(TweenMax.to(txt3009, 2, {opacity:1}),4);
+});
+function p9_init() {stdAudioInit('mod3/assets/audio/FordCBS_3009.mp3',tl3009);}
+function p9_out() {tl3009.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s3009" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">Step 2: Prepare for the Sales Call</div>
+		</div>
+		<div class="slidecontent">
+			<div class="sliderow orangeboximg">
+				<div class="slidetxt">Commercial Cost-Per-Mile Value Builder Quick Quote Tool</div>
+			</div>
+		</div>
+		<img class="rightSideImg" src="mod3/assets/imgs/3009.png" alt="photo 3009"/>
+		<img class="stepIcon" src="mod3/assets/imgs/iconStep_02.png" alt="Step 2 Icon"/>
+	</div>
+</div>

@@ -1,0 +1,132 @@
+<style>
+#s3027 .slidecontent {
+	position: relative;
+	padding-top: 10px;
+	padding-bottom: 40px;
+}
+#s3027 .sliderow {
+	position: relative;
+	margin-top: 10px;
+	padding-top: 10px;
+	padding-left: 0;
+	width: 100%;
+	height: 320px;
+	/*
+	margin-bottom: 40px;
+	padding-bottom: 10px;
+	margin-left: 35px;
+	margin-right: 35px;
+	border: 1px solid black;
+	text-align:justify;
+	*/
+}
+#s3027 .noteTxt {
+	position: absolute;
+	bottom: 60px;
+}
+#s3027 .headbullet {
+	padding-top: 4px;
+	color: #000000;
+}
+#s3027 .slideTxtBoxLeft {
+	position: relative;
+	width: 500px;
+	height: 450px;
+	left: 60px;
+	top:0;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+#s3027 .slideImgBoxRight {
+	position: absolute;
+	width: 450px;
+	height: 450px;
+	right: 30px;
+	top:-20px;
+}
+#s3027_img1 {
+	position:  absolute;
+	top:120px;
+	left: 16px;
+	z-index: 4;
+}
+#s3027_img2 {
+	position:  absolute;
+	top:0;
+	left: 113px;
+	z-index: 5;
+}
+#s3027_img3 {
+	position:  absolute;
+	top:124px;
+	left: 247px;
+	z-index: 6;
+}
+button#btn3027JW {
+	position: absolute;
+	bottom: 0;
+	left: 80px;
+}
+</style>
+<script type="text/javascript">
+var tl3027;
+$(document).ready(function () {
+	stdPageInit("s3027");
+	var li3027 = $("#s3027").find("li");
+	var s3027_imgs = $("#s3027").find("img");
+	tl3027 = new TimelineMax({paused:false});
+	tl3027.add(TweenMax.to(li3027, 0, {opacity:0}));
+	tl3027.addPause();
+	tl3027.add(TweenMax.to("#s3027_b0", 2, {opacity:1}),1);
+	tl3027.add(TweenMax.to("#s3027_b1", 2, {opacity:1}),6);
+	tl3027.add(TweenMax.to("#s3027_b1a", 1, {opacity:1}),9);
+	tl3027.add(TweenMax.to("#s3027_img1", 1, {opacity:1}),9.5);
+	tl3027.add(TweenMax.to("#s3027_b1b", 2, {opacity:1}),11);
+	tl3027.add(TweenMax.to("#s3027_img2", 1, {opacity:1}),11.5);
+	tl3027.add(TweenMax.to("#s3027_b2", 2, {opacity:1}),15);
+	tl3027.add(TweenMax.to("#s3027_img3", 1, {opacity:1}),16);
+	tl3027.add(TweenMax.to("#s3027_b3", 1, {opacity:1}),25);
+	tl3027.add(TweenMax.to("#s3027_b3a", 2, {opacity:1}),27);
+	tl3027.add(TweenMax.to($("#btn3027JW"),1,{opacity:1}),0);//added
+	$("#btn3027JW").click(function() {
+		AudioPlayer.pauseAudio();
+		WBTApp.setImpedimentComplete();
+		$.get("mod3/assets/video/fordcbs_videoJW04.html", function(data) {WBTApp.showCPop(data);});
+	});
+});
+function p21_init() {
+	isCurrentPageTracked(21, true, "Please watch the video on this page");
+	stdAudioInit('mod3/assets/audio/FordCBS_3027.mp3',tl3027);
+}
+function p21_out() {tl3027.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s3027" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">Step 4: Close the Sale<br/>Step 5: Maintain the Relationship</div>
+		</div>
+		<div class="slidecontent">
+			<div class="sliderow orangeboximg">
+				<div class="slideTxtBoxLeft">
+					<div class="slidebullets_small">
+						<ul class="arrowlist_small">
+							<li id="s3027_b0" class="headbullet">Step 4: Close the Sale</li>
+							<li id="s3027_b1" class="arrowbullet_small">Complete necessary paperwork</li>
+							<li id="s3027_b1a" class="arrowbullet_small">ESP application</li>
+							<li id="s3027_b1b" class="arrowbullet_small">QFC enrollment and credit application</li>
+							<li id="s3027_b2" class="arrowbullet_small">Thank the customer for his/her business</li>
+							<li id="s3027_b3" class="headbullet">Step 5: Maintain the Relationship</li>
+							<li id="s3027_b3a" class="arrowbullet_small">Follow up regularly to ensure customer satisfaction and to respond quickly to any concerns</li>
+						</ul>
+					</div>
+				</div>
+				<div class="slideImgBoxRight">
+					<img id="s3027_img1" class="screenImg" src="mod3/assets/imgs/s3027_img1.png" alt="SCreenShot"/>
+					<img id="s3027_img2" class="screenImg" src="mod3/assets/imgs/s3027_img2.png" alt="SCreenShot"/>
+					<img id="s3027_img3" class="screenImg" src="mod3/assets/imgs/s3027_img3.png" alt="SCreenShot"/>
+				</div>
+			</div>
+			<button id="btn3027JW" class="btn_video btn_videoJW" type="button">JW Video!</button>
+		</div>
+	</div>
+</div>

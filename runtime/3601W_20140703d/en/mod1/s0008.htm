@@ -1,0 +1,70 @@
+<style>
+#s0008 .slidecontent {
+	height: 400px;
+}
+#s0008 .sliderow {
+	top: 20px;
+	height: 320px;
+}
+button#btn0008JW {
+	position: absolute;
+	bottom: 0;
+	right: 30px;
+}
+</style>
+<script type="text/javascript">
+var s0008_bullets;
+var tl0008;
+$(document).ready(function() {
+	stdPageInit("s0008");
+	s0008_bullets = $("#s0008").find('li');
+	//TweenMax.to(bulletli, 0, {opacity:0});
+	tl0008 = new TimelineMax({paused: false});
+	tl0008.add(TweenMax.to(s0008_bullets, 0, {opacity: 0}));
+	tl0008.addPause();
+	tl0008.add(TweenMax.to("#s0008_b1", 1, {opacity: 1}), 3.5);
+	tl0008.add(TweenMax.to("#s0008_b2", 1, {opacity: 1}));
+	tl0008.add(TweenMax.to("#s0008_b3", 1, {opacity: 1}), 17.5);
+	tl0008.add(TweenMax.to("#s0008_b4", 1, {opacity: 1}));
+	tl0008.add(TweenMax.to("#s0008_b5", 1, {opacity: 1}), 23.5);
+	tl0008.add(TweenMax.to("#s0008_b6", 1, {opacity: 1}));
+	tl0008.add(TweenMax.to("#s0008_b7", 1, {opacity: 1}), 31.2);
+	tl0008.add(TweenMax.to("#s0008_b8", 1, {opacity: 1}));
+	tl0008.add(TweenMax.to($("#btn0008JW"),1,{opacity:1}),0);//added
+	$("#btn0008JW").click(function(evt) {
+		AudioPlayer.pauseAudio();
+		tl0008.progress(1).pause();
+		WBTApp.setImpedimentComplete();
+		$.get("mod1/assets/video/fordcbs_videoJW01.html", function(data) {WBTApp.showCPop(data);});
+	});
+});
+function p8_init() {
+	isCurrentPageTracked(8, true, "Please watch the video on this page");
+	stdAudioInit('mod1/assets/audio/FordCBS_0008.mp3', tl0008);
+}
+function p8_out() {tl0008.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s0008" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">Course Agenda</div>
+		</div>
+		<div class="slidecontent">
+			<div class="sliderow orangeboximg">
+				<div class="slidebullets">
+					<ul class="arrowlist">
+						<li id="s0008_b1" class="arrowbullet">Module 1:</li>
+						<li id="s0008_b2" class="simplebullet">The Opportunity</li>
+						<li id="s0008_b3" class="arrowbullet">Module 2:</li>
+						<li id="s0008_b4" class="simplebullet">What is Ford Commercial Business Solutions?</li>
+						<li id="s0008_b5" class="arrowbullet">Module 3:</li>
+						<li id="s0008_b6" class="simplebullet">Selling Strategies</li>
+						<li id="s0008_b7" class="arrowbullet">Module 4:</li>
+						<li id="s0008_b8" class="simplebullet">Resources and Tools</li>
+					</ul>
+				</div>
+			</div>
+			<button id="btn0008JW" class="btn_video btn_videoJW img_ie" type="button">Wiegand’s Wisdom</button>
+		</div>
+	</div>
+</div>

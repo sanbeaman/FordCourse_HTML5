@@ -1,0 +1,123 @@
+<style>
+#s4002 .slideheader{
+	margin-bottom: 0;
+}
+#s4002 .slidecontent{
+	margin-top: 0;
+	padding-bottom: 20px;
+}
+#s4002 .sliderow {
+	width: 100%;
+	height: 450px;
+}
+#s4002 .sliderow {
+	position: relative;
+	padding-left: 50px;
+	width: 100%;
+	height: 420px;
+}
+#s4002 .slideTxtBox{
+	position: relative;
+	display: inline-block;
+	width: 400px;
+	height: 450px;
+	vertical-align:middle;
+}
+#s4002 .slideImgBox{
+	position: relative;
+	display: inline-block;
+	width: 500px;
+	height: 450px;
+	vertical-align:top;
+}
+#s4002 img.rightSideImg {
+	position: absolute;
+	width:322px;
+	height:400px;
+	top: 70px;
+	right: 100px;
+}
+#s4002 .slidebullets_small{
+	top: 120px;
+}
+#s4002 .noteTxt{
+	position: absolute;
+	bottom: 60px;
+}
+#s4002 .headbullet{
+	color: #000000;
+}
+#s4002 .imgStack{
+	position: absolute;
+}
+#s4002_img1 {
+	top: 10px;
+	right: 20px;
+	/*left: 236px;*/
+}
+#s4002_img2 {
+	top: 55px;
+	left: 140px;
+}
+#s4002_img3 {
+	top: 121px;
+	left: 33px;
+}
+#s4002_img4 {
+	top: 210px;
+	right: 40px;
+}
+</style>
+<script type="text/javascript">
+var tl4002;
+$(document).ready(function () {
+	stdPageInit("s4002");
+	var bullets4002 = $("#s4002").find("li");
+	var notetxt4002 = $("#s4002").find(".noteTxt");
+	var imgs4002 = $("#s4002").find("img");
+	tl4002 = new TimelineMax({paused:false});
+	tl4002.add(TweenMax.to(bullets4002, 0, {opacity:0}));
+	tl4002.add(TweenMax.to(notetxt4002, 0, {opacity:0}));
+	tl4002.add(TweenMax.to(imgs4002, 0, {opacity:0, scale:0.5}),0);
+	tl4002.addPause();
+	tl4002.add(TweenMax.to("#s4002_b1a", 2, {opacity:1}), 7);
+	tl4002.add(TweenMax.to("#s4002_img1", 2, {opacity:1, scale:1, ease:"BackeEaseOut"}), 8);
+	tl4002.add(TweenMax.to("#s4002_b1b", 2, {opacity:1}), 18);
+	tl4002.add(TweenMax.to("#s4002_img2", 2, {opacity:1,scale:1, ease:"BackeEaseOut"}), 19);
+	tl4002.add(TweenMax.to("#s4002_b1c", 2, {opacity:1}), 32);
+	tl4002.add(TweenMax.to("#s4002_img3", 2, {opacity:1,scale:1, ease:"BackeEaseOut"}),33);
+	tl4002.add(TweenMax.to("#s4002_b1d", 2, {opacity:1}), 35);
+	tl4002.add(TweenMax.to("#s4002_img4", 2, {opacity:1,scale:1, ease:"BackeEaseOut"}), 36);
+	tl4002.add(TweenMax.to(notetxt4002, 1, {opacity:1}),40);
+});
+function p3_init() {stdAudioInit('mod4/assets/audio/FordCBS_4002.mp3',tl4002);}
+function p3_out() {tl4002.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s4002" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">Customer Sales Presentation – Brochures and Flyers</div>
+		</div>
+		<div class="slidecontent">
+			<div class="sliderow orangevertline">
+				<div class="slideTxtBox">
+					<div class="slidebullets_small">
+						<ul class="arrowlist_small">
+							<li id="s4002_b1a" class="arrowbullet_small">Customer Interview form</li>
+							<li id="s4002_b1b" class="arrowbullet_small">Commercial Cost-Per-Mile Value Builder Quick Quote Tool</li>
+							<li id="s4002_b1c" class="arrowbullet_small">CommerciaLease Quick Quote</li>
+							<li id="s4002_b1d" class="arrowbullet_small">Customer Presentation template</li>
+						</ul>
+					</div>
+					<div class="noteTxt">Download from: FMCDealer.com > Parts & Service tab > ESP link > Fleet link</div>
+				</div>
+				<div class="slideImgBox">
+					<img id="s4002_img1" class="imgStack" src="mod4/assets/imgs/s4002a.png" alt="Cover"/>
+					<img id="s4002_img2" class="imgStack" src="mod4/assets/imgs/s4002b.png" alt="Cover"/>
+					<img id="s4002_img3" class="imgStack" src="mod4/assets/imgs/s4002c.png" alt="Cover"/>
+					<img id="s4002_img4" class="imgStack" src="mod4/assets/imgs/s4002d.png" alt="Cover"/>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

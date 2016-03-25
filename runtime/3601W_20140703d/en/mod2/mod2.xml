@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sco>
+	<course id="cFordCBSm2" title="GROWING YOUR COMMERCIAL BUSINESS WITH FORD COMMERCIAL BUSINESS SOLUTIONS" lang="en-usa" >
+		<topic id="c2t1" title="Module 2: What Is Ford Commercial Business Solutions?">
+			<page id="c2t1p1" label="Module Introduction" url="mod2/s2000.htm"/>
+			<page id="c2t1p2" label="What is Ford Commercial Business Solutions?" url="mod2/s2001.htm"/>
+			<page id="c2t1p3" label="What is Ford Commercial Business Solutions? (continued)" url="mod2/s2002.htm"/>
+			<page id="c2t1p4" label="Why ESP?" url="mod2/s2003.htm"/>
+			<page id="c2t1p5" label="Why QFC?" url="mod2/s2004.htm"/>
+			<page id="c2t1p6" label="YOU Have the Strongest Solution in the Marketplace!" url="mod2/s2005.htm"/>
+			<page id="c2t1p7" label="Ford Credit Financing Completes the Solution" url="mod2/s2006.htm"/>
+			<page id="c2t1p8" label="Ford Credit Financing Completes the Solution" url="mod2/s2006a.htm"/>
+			<page id="c2t1p9" label="Ford Commercial Business Solutions Competitive Advantages" url="mod2/s2007.htm"/>
+			<page id="c2t1p10" label="Knowledge Check ESP/QFC Competitive Comparison" url="mod2/s2008.htm"/>
+			<page id="c2t1p11" label="Knowledge Check Ford Credit Products and Services" url="mod2/s2009.htm"/>
+		</topic>
+	</course>
+</sco>

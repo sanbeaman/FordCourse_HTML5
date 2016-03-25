@@ -1,0 +1,65 @@
+<style>
+#s3002 .slidecontent {
+	top: 10px;
+	height: 400px;
+	padding-bottom: 20px;
+}
+#s3002 .sliderow {
+	top: 40px;
+	height: 330px;
+}
+#s3002 .slideTxt {
+	position: relative;
+	top: 120px;
+	padding-left: 60px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	width: 400px;
+	font-size: 20pt;
+	line-height: 20pt;
+}
+#s3002 .sideright {
+	position: absolute;
+	top: -20px;
+	right: 100px;
+}
+#s3002 img.stepIcon {
+	position: absolute;
+	width:60px;
+	height:60px;
+	top: 52px;
+	right: 20px;
+}
+</style>
+<script type="text/javascript">
+var tl3002;
+var txt3002;
+var img3002;
+$(document).ready(function () {
+	stdPageInit("s3002");
+	txt3002 = $("#txt3002");
+	img3002 = $("#img3002");
+	tl3002 = new TimelineMax({paused:false});
+	tl3002.add(TweenMax.to(img3002, 0, {opacity:0, x:"+=100px"}));
+	tl3002.add(TweenMax.to(txt3002, 0, {opacity:0}),0);
+	tl3002.addPause();
+	tl3002.add(TweenMax.to(img3002, 2, {opacity:1, x:"-=100px"}),2);
+	tl3002.add(TweenMax.to(txt3002, 2, {opacity:1}),4);
+});
+function p3_init() {stdAudioInit('mod3/assets/audio/FordCBS_3002.mp3',tl3002);}
+function p3_out() {tl3002.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s3002" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">Step 1: Qualifying the Customer</div>
+		</div>
+		<div class="slidecontent">
+			<div class="sliderow orangeboximg">
+				<div class="slideTxt">CAM Michelle qualifies all of her customers to identify good candidates for  Ford Commercial Business Solutions.</div>
+				<img class="sideright" src="mod3/assets/imgs/3002.png" alt="photo 3002"/>
+			</div>
+		</div>
+		<img class="stepIcon" src="mod3/assets/imgs/iconStep_01.png" alt="Step 1 Icon"/>
+	</div>
+</div>

@@ -1,0 +1,268 @@
+<style>
+#s2009	.slidecontent {
+	margin-top:10px;
+	height: 450px;
+}
+#left-tab {
+	position:absolute;
+	top:0;
+	left:-255px;
+	width:250px;
+	height:460px;
+	z-index:50;
+	background-color:#dddddd;
+	padding: 0 2em;
+}
+#left-tab #reports {
+	top: 5px;
+}
+.pagecontent #instructions, #page-content #instructions2 {
+	position:absolute;
+	top:120px;
+	left:40px;
+	width:266px;
+	color:#333;
+	font-size:12pt;
+	line-height:26px;
+}
+.pagecontent #instructions2 {
+	top: 345px;
+	left:80px;
+	color: #999;
+}
+#tab-button {
+	position:absolute;
+	top:200px;
+	right:-6px;
+	width:37px;
+	height:100px;
+	background:url("mod2/assets/imgs/orangetab.png") no-repeat;
+	cursor:pointer;
+}
+#option1, #option2, #option3, #option4, #option5, #option6 {
+	position:absolute;
+	top:10px;
+	left:80px;
+	width:160px;
+	height:140px;
+	background-color:#D3E7FF;
+	color:#000066;
+	text-align:center;
+	cursor:move;
+}
+#option2 {
+	top:160px;
+}
+#option3 {
+	top:310px;
+}
+#option4 {
+	top:340px;
+}
+#option5 {
+	top:430px;
+}
+#option6 {
+	top:520px;
+}
+.drag-container {
+	display: absolute;
+	vertical-align: middle;
+	background-color:none;
+	width: inherit;
+	height:inherit;
+	text-align:center;
+	font-size:2em;
+	font-weight:bold;
+	color: #b4b4b4;
+}
+.drop-container {
+	position:relative;
+	display: table-cell;
+	vertical-align: middle;
+	background-color:none;
+	width: inherit;
+	height:inherit;
+	text-align:center;
+	font-size:2em;
+	font-weight:bold;
+	color: #b4b4b4;
+}
+.drop-area {
+	position:absolute;
+	height:140px;
+	width:160px;
+	background:#ffffff;
+	background-position:left;
+	/*border-radius: .5em;*/
+	border-style:solid;
+	border-width:2px;
+	border-color: #f15d22;
+}
+.slidecontent #instructions2 {
+	top: 300px;
+	color:#f15d22;
+	font-size: 16pt;
+}
+#feedback {
+	position:relative;
+	top:50%;
+	left:50%;
+	color:#f15d22;
+	width:200px;
+	margin-left: -100px;
+	margin-top: -22px;
+	/*background-color: #91d5d4;*/
+	font-weight:bold;
+	display:none;
+	text-align: center;
+	font-size: 24pt;
+	/*
+	padding-top: 30px;
+	padding-bottom: 20px;
+	*/
+}
+#drop-area1, #drop-area2, #drop-area3 {
+	left: 450px;
+	top: 10px;
+}
+#drop-area2 {
+	top: 160px;
+}
+#drop-area3 {
+	top: 310px;
+}
+.drag-container h4 {
+	position: absolute;
+	width: 100%;
+	height: 36px;
+	bottom:0;
+	left:0;
+	background: #f15d22;
+	color: #ffffff;
+	font-size: 12pt;
+	text-align:center;
+}
+.drop-area-text {
+	position: absolute;
+	left: 650px;
+	padding: 10px 15px;
+	height:120px;
+	width:300px;
+	/*
+	background:#ffffff;
+	border-style:solid;
+	border-width:2px;
+	border-color: #f15d22;
+	*/
+	display:table-cell;
+	vertical-align:middle;
+}
+#drop-area-text1, #drop-area-text2, #drop-area-text3 {
+	left: 640px;
+	top: 10px;
+}
+#drop-area-text2 {
+	top: 160px;
+}
+#drop-area-text3 {
+	top: 310px;
+}
+.drop-area-text ul {
+	position: relative;
+	top:20%;
+	left:10%;
+	list-style-type:disc;
+}
+</style>
+<script type="text/javascript">
+var total = 0, totalCorrect = 3;
+$(document).ready(function () {
+	stdPageInit("s2009");
+	/*** Drag and drop page script. For full api documentation on drag and drop components visit http://jqueryui.com ***/
+	$('#tab-button').click(function (a) {
+		$('#left-tab').animate({left: 0});
+		$(this).hide();
+		$('#instructions2').hide();
+		// Set impediment. The user cannot continue until he completes the exercise. Required for Drag and Drop
+		WBTApp.setImpediment(IMPEDIMENT_FULL);
+		window.isDragging=true;
+	});
+	$("#option1, #option2, #option3").draggable({opacity: 0.7, revert: 'invalid'});
+	$("#drop-area1").droppable({
+		drop: function (a, b) {
+			$('#option3').draggable({disabled: true}).css({left: (450 + 02), top: (0 + 12)});
+			total++;
+			if (total == totalCorrect) {
+				$('#feedback').show();
+				// when complete, reset impediment to allow page transitions
+				WBTApp.setImpedimentComplete();
+			}
+		},
+		accept: '#option3',
+		tolerance: 'intersect'
+	});
+	$("#drop-area2").droppable({
+		drop: function (a, b) {
+			$('#option2').draggable({disabled: true}).css({left: (450 + 2), top: (160 + 2)});
+			total++;
+			if (total == totalCorrect) {
+				$('#feedback').show();
+				// when complete, reset impediment to allow page transitions
+				WBTApp.setImpedimentComplete();
+			}
+		},
+		accept: '#option2',
+		tolerance: 'intersect'
+	});
+	$("#drop-area3").droppable({
+		drop: function (a, b) {
+			$('#option1').draggable({disabled: true}).css({left: (450 + 2), top: (310 + 2)});
+			total++;
+			if (total == totalCorrect) {
+				$('#feedback').show();
+				// when complete, reset impediment to allow page transitions
+				WBTApp.setImpedimentComplete();
+			}
+		},
+		accept: '#option1',
+		tolerance: 'intersect'
+	});
+});
+// Init function placeholders. Replace NN with page number.
+function p11_init() {stdAudioInit('mod2/assets/audio/FordCBS_2009.mp3');}
+function p11_out() {}
+</script>
+<div class="pagecontent">
+	<div id="s2009" class="slideholder">
+		<div class="slideheader"><div class="slideheadertext">Knowledge Check<br/>Ford Credit Products and Services</div></div>
+		<div class="slidecontent">
+			<div id="instructions2">(Click the tab to start exercise)</div>
+			<div class="drop-area" id="drop-area1">
+				<div class="drop-container">B1</div>
+			</div>
+			<div id="drop-area-text1" class="drop-area-text"><ul><li>Availability of credit to cover all eligible vehicle financing needs</li><li>No enrollment or maintenance fees</li></ul></div>
+			<div class="drop-area" id="drop-area2">
+				<div class="drop-container">B2</div>
+			</div>
+			<div id="drop-area-text2" class="drop-area-text"><ul><li>No hidden fees</li><li>Flexible terms</li><li>No GVW restrictions</li></ul></div>
+			<div class="drop-area" id="drop-area3">
+				<div class="drop-container">B3</div>
+			</div>
+			<div id="drop-area-text3" class="drop-area-text"><ul><li>No mileage restrictions</li><li>Typically lower payments than traditional financing</li></ul></div>
+			<div id="left-tab" class="animate">
+				<div id="feedback">Great Job!</div>
+				<div id="option1">
+					<div class="drag-container"><img src="mod2/assets/imgs/2009dragA.png"/><h4>CommerciaLease</h4></div>
+				</div>
+				<div id="option2">
+					<div class="drag-container"><img src="mod2/assets/imgs/2009dragB.png"/><h4>Commercial Retail Financing</h4></div>
+				</div>
+				<div id="option3">
+					<div class="drag-container"><img src="mod2/assets/imgs/2009dragC.png"/><h4>Commercial Line of Credit</h4></div>
+				</div>
+				<div id="tab-button">&nbsp;</div>
+			</div>
+		</div>
+	</div>
+</div>

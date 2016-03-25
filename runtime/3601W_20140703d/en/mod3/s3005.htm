@@ -1,0 +1,109 @@
+<style>
+#s3005 .slideheader {
+	margin-bottom: 0;
+}
+#s3005 .sliderow {
+	top:15px;
+	width: 100%;
+	height: 450px;
+}
+#s3005 .txtArea{
+	position: relative;
+	display: inline-block;
+	width: 500px;
+	height: 450px;
+	vertical-align:middle;
+}
+#s3005 .imgArea{
+	position: relative;
+	display: inline-block;
+	width: 500px;
+	height: 450px;
+	vertical-align:top;
+}
+#s3005 .txtArea .slideTxt{
+	position:absolute;
+	width: 460px;
+	height: 350px;
+	right: 60px;
+	top:40px;
+	display: table;
+}
+#s3005 .txtArea .slideTxt p{
+	font-size: 20pt;
+	line-height: 20pt;
+	display: table-cell;
+	vertical-align: middle;
+}
+#s3005 img.leftSide {
+	position: absolute;
+	top: 20px;
+	left: 45px;
+}
+button#btn3005JW {
+	position: absolute;
+	bottom: 10px;;
+	right: 30px;
+}
+#s3005 img.stepIcon {
+	position: absolute;
+	width:60px;
+	height:60px;
+	top: 4px;
+	right: 20px;
+}
+/*
+#s3005 .slidetxt{
+	font-size: 20pt;
+	line-height: 20pt;
+	margin: 30px 60px 20px 500px;
+	padding: 10px;
+}
+*/
+</style>
+<script type="text/javascript">
+var tl3005;
+var txt3005;
+var img3005;
+$(document).ready(function () {
+	stdPageInit("s3005");
+	txt3005 = $("#txt3005");
+	img3005 = $("#img3005");
+	tl3005 = new TimelineMax({paused:false});
+	tl3005.add(TweenMax.to(img3005, 0, {opacity:0, x:"+=100px"}));
+	tl3005.add(TweenMax.to(txt3005, 0, {opacity:0}),0);
+	tl3005.addPause();
+	tl3005.add(TweenMax.to(img3005, 2, {opacity:1, x:"-=100px"}),2);
+	tl3005.add(TweenMax.to(txt3005, 2, {opacity:1}),4);
+	tl3005.add(TweenMax.to($("#btn3005JW"),1,{opacity:1}),0);//added
+	$("#btn3005JW").click(function() {
+		AudioPlayer.pauseAudio();
+		WBTApp.setImpedimentComplete();
+		$.get("mod3/assets/video/fordcbs_videoJW03.html", function(data) {WBTApp.showCPop(data);});
+	});
+});
+function p6_init() {
+	isCurrentPageTracked(6, true, "Please watch the video on this page");
+	stdAudioInit('mod3/assets/audio/FordCBS_3005.mp3',tl3005);
+}
+function p6_out() {tl3005.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s3005" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">Step 1: Qualifying the Customer<br/>Cost-per-Mile Value Builder</div>
+		</div>
+		<div class="slidecontent">
+			<div class="sliderow orangevertline">
+				<div class="imgArea leftSide">
+					<img class="leftSide" src="mod3/assets/imgs/3005.png" alt="photo 3005"/>
+				</div>
+				<div class="txtArea rightSide">
+					<div class="slideTxt"><p>You and Michelle have an excellent sales tool in the Commercial Cost-per-mile Value Builder Quick Quote Tool. With it, you can demonstrate the value of adding ESP PremiumCARE and Premium Maintenance to vehicle purchase or lease. <br/>Click on the Wiegand’s Wisdom icon to see how it works.</p></div>
+				</div>
+			</div>
+			<button id="btn3005JW" class="btn_video btn_videoJW" type="button">JW Video!</button>
+			<img class="stepIcon" src="mod3/assets/imgs/iconStep_01.png" alt="Step 1 Icon"/>
+		</div>
+	</div>
+</div>

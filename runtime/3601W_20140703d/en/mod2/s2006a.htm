@@ -1,0 +1,162 @@
+<style>
+#s2006a .slidedirections {
+	padding: 4px 0;
+	font-size: 16pt;
+	color: #f15d22;
+	font-weight: bold;
+	text-align:center;
+}
+#s2006a .slidecontent {
+	width: 100%;
+	padding-bottom: 20px;
+}
+#s2006a .sliderow {
+	margin-left: 35px;
+	margin-right: 35px;
+	padding-bottom: 40px;
+	/*border: 1px solid black;*/
+	text-align:justify;
+}
+#s2006a .sliderow:after {
+	content: "";
+	width: 100%;
+	display: inline-block;
+}
+#s2006a .clickimg {
+	vertical-align:top;
+	padding:2px;
+	width: 300px;
+	display: inline-block;
+}
+#s2006a .clickphoto {
+	border: 2px solid transparent;
+	z-index:-1;
+}
+#s2006a .clickphoto:hover {
+	cursor:pointer;
+	border: 2px solid  #f15d22;
+}
+#s2006a .clickcover {
+	position:absolute;
+	top:4px;
+	left:4px;
+	background-color: #f15d22;
+	padding: 20px;
+	width: 260px;
+	height: 245px;
+	display: none;
+}
+#s2006a .clickcovertext ul {
+	color: #ffffff;
+	font-size: 12pt;
+	padding-left: 12px;
+	margin: 10px;
+	text-align: left;
+}
+#s2006a .clickcovertext ul li {
+	/*padding-left: 12px;*/
+}
+#s2006a .imgcaption {
+	color: #ff0000;
+	font-size: 14pt;
+}
+button#btn2006aLEE {
+	position: absolute;
+	right: 35px;
+	bottom: 2px;
+}
+</style>
+<script type="text/javascript">
+var tl2006a;
+var s2006a_clickimgs;
+var s2006a_clickcoversa;
+$(document).ready(function () {
+	stdPageInit("s2006a");
+	s2006a_clickimgs = $("#s2006").find(".clickimg");
+	s2006a_clickcoversa= $("#s2006").find(".clickcovers");
+	s2006a_clickcoversa.hide();
+	tl2006a = new TimelineMax();
+	////tl2006a.add(TweenMax.to("#btn2006aLEE", 0, {opacity:0}));
+	//tl2006a.add(TweenMax.to(clickcoversa, 0, {opacity:0}));
+	tl2006a.addPause();
+	//tl2006a.add(TweenMax.to("#clickcover1a", 1, {opacity:1}));
+	//tl2006a.add(TweenMax.to("#clickcover2a", 1, {opacity:1}));
+	//tl2006a.add(TweenMax.to("#clickcover3a", 1, {opacity:1}));
+	////tl2006a.add(TweenMax.to("#btn2006aLEE", 1, {opacity:1}));
+	tl2006a.add(TweenMax.to($("#btn2006aLEE"),1,{opacity:1}),0);//added
+	$("#clickimg1a").hover(s2006a_mouseEnter, s2006a_mouseLeave);
+	$("#clickimg2a").hover(s2006a_mouseEnter, s2006a_mouseLeave);
+	$("#clickimg3a").hover(s2006a_mouseEnter, s2006a_mouseLeave);
+	$("#btn2006aLEE").click(function() {
+		AudioPlayer.pauseAudio();
+		WBTApp.setImpedimentComplete();
+		$.get("mod2/assets/video/fordcbs_videoLee01.html", function(data) {WBTApp.showCPop(data);});
+	});
+});
+function s2006a_mouseEnter(mevt){
+	//console.log($(this));
+	$(this).find(".clickcover").show();
+}
+function s2006a_mouseLeave(mevt){
+	$(this).find(".clickcover").hide();
+}
+function p8_init() {
+	isCurrentPageTracked(8, true, "Please watch the video on this page")
+	stdAudioInit('mod2/assets/audio/FordCBS_2006-04.mp3',tl2006a);
+}
+function p8_out() {
+	$(".clickcover").hide();
+	tl2006a.progress(0).pause();
+}
+</script>
+<div class="pagecontent">
+	<div id="s2006a" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">Ford Credit Financing Completes the Solution</div>
+		</div>
+		<div class="slidecontent">
+			<div class="slidedirections">Customers can finance 100% of the cost of the Ford Commercial Business Solution!</div>
+			<div class="sliderow">
+				<div id="clickimg1a" class="clickimg">
+					<img class="clickphoto" src="mod2/assets/imgs/2006a.png" alt="img1"/>
+					<div id="clickcover1a" class="clickcover">
+						<div class="clickcovertext">
+							<ul>
+								<li>Can be tailored to meet unique business needs</li>
+								<li>Improves cash flow</li>
+								<li>No mileage restrictions</li>
+								<li>No wear and use lease-end charges</li>
+							</ul>
+						</div>
+					</div>
+					<p><b>CommerciaLease</b><br/>A customizable lease plan.</p>
+				</div>
+				<div id="clickimg2a" class="clickimg"><img  class="clickphoto" src="mod2/assets/imgs/2006c.png" alt="img2"/>
+					<div id="clickcover2a" class="clickcover">
+						<div class="clickcovertext">
+							<ul>
+								<li>Competitive rates</li>
+								<li>Flexible terms</li>
+								<li>No hidden fees or GVW restrictions</li>
+							</ul>
+						</div>
+					</div>
+					<p><b>Commercial Retail Financing</b><br/> Flexible financing to meet your business needs.</p>
+				</div>
+				<div id="clickimg3a" class="clickimg"><img  class="clickphoto" src="mod2/assets/imgs/2006b.png" alt="img3"/>
+					<div id="clickcover3a" class="clickcover">
+						<div class="clickcovertext">
+							<ul>
+								<li>Availability of credit when needed to cover all eligible vehicle financing needs</li>
+								<li>No enrollment or maintenance fees</li>
+								<li>Frees up capital</li>
+							</ul>
+						</div>
+					</div>
+					<p><b>Commercial Line of Credit</b><br/>A convenient way for your businesses to build its fleet.</p>
+				</div>
+			</div>
+		</div>
+		<button id="btn2006aLEE" class="btn_video btn_videoLEE" type="button">Lee Video!</button>
+	</div>
+</div>

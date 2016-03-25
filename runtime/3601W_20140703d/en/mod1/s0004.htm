@@ -1,0 +1,59 @@
+<style>
+#s0004 .slidecontent {
+	height: 400px;
+}
+#s0004 .sliderow {
+	top: 30px;
+	height: 330px;
+}
+#s0004 .slidebullets_small {
+	position: relative;
+	top: 60px;
+	padding-left: 60px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	width: 400px;
+}
+#s0004 .sideright {
+	position: absolute;
+	top: 0;
+	right: 40px;
+}
+</style>
+<script type="text/javascript">
+var tl0004;
+$(document).ready(function() {
+	stdPageInit("s0004");
+	var s0004_b1 = $("#s0004_b1");
+	var s0004_b2 = $("#s0004_b2");
+	var s0004_img = $("#s0004_img");
+	tl0004 = new TimelineMax({paused: false});
+	tl0004.add(TweenMax.to(s0004_b1, 0, {opacity: 0}), 0);
+	tl0004.add(TweenMax.to(s0004_b2, 0, {opacity: 0}), 0);
+	tl0004.add(TweenMax.to(s0004_img, 0, {opacity: 0}), 0);
+	tl0004.addPause();
+	tl0004.add(TweenMax.to(s0004_img, 2, {opacity: 1}), 2);
+	tl0004.add(TweenMax.to(s0004_b1, 1, {opacity: 1}), 8);
+	tl0004.add(TweenMax.to(s0004_b2, 1, {opacity: 1}), 12);
+});
+function p4_init() {stdAudioInit('mod1/assets/audio/FordCBS_0004.mp3', tl0004);}
+function p4_out() {tl0004.progress(0).pause();}
+</script>
+<div class="pagecontent">
+	<div id="s0004" class="slideholder">
+		<div class="slideheader">
+			<div class="slideheadertext">Are You Losing Commercial Business<br/>to Competitors Like This?</div>
+		</div>
+		<div class="slidecontent">
+			<div class="sliderow orangeboximg">
+				<div class="slidebullets_small">
+					<ul class="arrowlist_small">
+						<li id="s0004_b1" class="arrowbullet_small">They go beyond selling or leasing</li>
+						<li id="s0004_b2" class="arrowbullet_small">They provide products and services to help customers manage their vehicles more efficiently and cost effectively</li>
+					</ul>
+				</div>
+			</div>
+			<img id="s0004_img" class="sideright" src="mod1/assets/imgs/s0004.png" alt="s0004"/>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sco>
+  <course id="c1" title="GROWING YOUR COMMERCIAL BUSINESS WITH FORD COMMERCIAL BUSINESS SOLUTIONS" lang="en-usa" >
+    <topic id="c1t1" title="Module 4: Resources and Tools">
+      <page id="c1t1p1" label="Customer Sales Presentation" url="mod4/s4000.htm"/>
+		  <page id="c1t1p2" label="Brochures and Flyers" url="mod4/s4001.htm"/>
+      <page id="c1t1p3" label="Customizable Presentation Materials" url="mod4/s4002.htm"/>
+      <page id="c1t1p4" label="Tools and Resources" url="mod4/s4003.htm"/>
+      <page id="c1t1p5" label="Websites" url="mod4/s4004.htm"/>
+		</topic>
+  	<topic id="c1t2" title="Course Summary">
+    	<page id="c1t2p1" label="Course Summary" url="mod4/s5000.htm"/>
+			<page id="c1t2p2" label="Key Learning Points" url="mod4/s5001.htm"/>
+      <page id="c1t2p3" label="Congratulations!" url="mod4/s5002.htm"/>
+   	</topic>
+  </course>
+</sco>

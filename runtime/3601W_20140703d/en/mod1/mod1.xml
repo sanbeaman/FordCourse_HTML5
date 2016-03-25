@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sco>
+  <course id="c1" title="GROWING YOUR COMMERCIAL BUSINESS WITH FORD COMMERCIAL BUSINESS SOLUTIONS" lang="en-usa" >
+    <topic id="c1t1" title="Introduction">
+      <page id="c1t1p1" label="Start Course" url="mod1/s0001.htm"/>
+			<page id="c1t1p2" label="Navigating the Course" url="mod1/s0002.htm"/>
+      <page id="c1t1p3" label="Are You Losing Commercial Business to Competitors Like This?" url="mod1/s0003all.htm"/>
+      <page id="c1t1p4" label="Are You Losing Commercial Business to Competitors Like This? (continued)" url="mod1/s0004.htm"/>
+      <page id="c1t1p5" label="Are You Losing Commercial Business to Competitors Like This? (continued)" url="mod1/s0005.htm"/>
+      <page id="c1t1p6" label="STOP Losing Commercial Business to these Competitors!" url="mod1/s0006.htm"/>
+      <page id="c1t1p7" label="Course Objectives" url="mod1/s0007.htm"/>
+      <page id="c1t1p8" label="Course Agenda" url="mod1/s0008.htm"/>
+    </topic>
+    <topic id="c1t2" title="Module 1: The Opportunity">
+      <page id="c1t2p9" label="The Opportunity" url="mod1/s1000.htm"/>
+      <page id="c12p10" label="The Commercial Market and Ford" url="mod1/s1001.htm"/>
+   	</topic>
+  </course>
+</sco>
